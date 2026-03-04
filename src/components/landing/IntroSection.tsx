@@ -28,7 +28,7 @@ function FallingLetter({ char, progress, index }: { char: string, progress: Moti
                 opacity: letterOpacity,
                 display: 'inline-block'
             }}
-            className="text-6xl md:text-9xl font-black chrome-text leading-none tracking-tighter"
+            className="text-6xl md:text-9xl font-black chrome-text-alt leading-none tracking-tighter"
         >
             {char}
         </motion.span>
@@ -64,7 +64,7 @@ export function IntroSection() {
                     style={{ opacity }}
                     className="flex flex-col items-center text-center z-10"
                 >
-                    <span className="text-sm md:text-lg uppercase tracking-[0.4em] text-neon-blue mb-8 font-medium opacity-70">
+                    <span className="text-sm md:text-lg uppercase tracking-[0.4em] text-sky-300 mb-8 font-medium opacity-70">
                         SAIT Presents
                     </span>
 
@@ -99,7 +99,7 @@ export function IntroSection() {
                 </motion.div>
 
                 {/* Ambient Floor Glow */}
-                <div className="absolute bottom-0 left-0 right-0 h-[30vh] bg-gradient-to-t from-neon-purple/20 to-transparent pointer-events-none" />
+                <div className="absolute bottom-0 left-0 right-0 h-[30vh] bg-gradient-to-t from-sky-500/20 to-transparent pointer-events-none" />
             </div>
         </section>
     );
