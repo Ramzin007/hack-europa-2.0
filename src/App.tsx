@@ -1,12 +1,26 @@
-import { useState } from 'react';
+import { useState, memo } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { Layout } from './app/Layout';
-import { HeroSection } from './components/hero/HeroSection';
-import { AboutSection } from './components/about/AboutSection';
-import { StatsSection } from './components/landing/StatsSection';
+import { IntroSection } from './components/landing/IntroSection';
+import { EventSection } from './components/landing/EventSection';
+import { AboutUsSection } from './components/landing/AboutUsSection';
+import { ScheduleSection } from './components/landing/ScheduleSection';
+import { FinalCTASection } from './components/landing/FinalCTASection';
 import { RegistrationView } from './components/registration/RegistrationView';
 
 type View = 'landing' | 'registration';
+
+const LandingPage = memo(({ onRegister }: { onRegister: () => void }) => {
+  return (
+    <div key="landing-content" className="relative">
+      <IntroSection />
+      <EventSection onRegister={onRegister} />
+      <AboutUsSection />
+      <ScheduleSection />
+      <FinalCTASection onRegister={onRegister} />
+    </div>
+  );
+});
 
 function App() {
   const [view, setView] = useState<View>('landing');
@@ -15,11 +29,7 @@ function App() {
     <Layout>
       <AnimatePresence mode="wait">
         {view === 'landing' ? (
-          <div key="landing">
-            <HeroSection onNavigateRegistration={() => setView('registration')} />
-            <StatsSection />
-            <AboutSection />
-          </div>
+          <LandingPage key="landing" onRegister={() => setView('registration')} />
         ) : (
           <div key="registration">
             <RegistrationView onBack={() => setView('landing')} />
