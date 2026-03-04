@@ -25,11 +25,15 @@ const LandingPage = memo(({ onRegister }: { onRegister: () => void }) => {
 function App() {
   const [view, setView] = useState<View>('landing');
 
+  const handleRegister = () => {
+    window.location.assign('https://docs.google.com/forms/u/0/');
+  };
+
   return (
     <Layout>
       <AnimatePresence mode="wait">
         {view === 'landing' ? (
-          <LandingPage key="landing" onRegister={() => setView('registration')} />
+          <LandingPage key="landing" onRegister={handleRegister} />
         ) : (
           <div key="registration">
             <RegistrationView onBack={() => setView('landing')} />

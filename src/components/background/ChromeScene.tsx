@@ -25,13 +25,28 @@ const OBJECTS: ObjectConfig[] = [
 function SceneContent({ objectCount }: { objectCount: number }) {
     const groupRef = useRef<THREE.Group>(null);
 
-    // Hardened performance: isolated scroll parallax
+    // Hardened performance: Radial Dispersal Animation
+    // Objects push OUTWARD from the center as scroll increases
     useFrame(() => {
         if (!groupRef.current) return;
         const scrollY = window.scrollY;
-        // Subtle Z-depth parallax and vertical drift
-        groupRef.current.position.y = scrollY * 0.002;
-        groupRef.current.position.z = Math.sin(scrollY * 0.001) * 2;
+        const scrollFactor = scrollY * 0.01;
+
+        groupRef.current.children.forEach((child, i) => {
+            const config = OBJECTS[i];
+            if (!config) return;
+
+            // Get direction vector from origin (0,0,0)
+            const dirX = config.position[0];
+            const dirY = config.position[1];
+
+            // Push outward based on original position vector
+            child.position.x = config.position[0] + (dirX * scrollFactor * 0.5);
+            child.position.y = config.position[1] + (dirY * scrollFactor * 0.5);
+
+            // Still keep a slight receding Z for depth
+            child.position.z = config.position[2] - (scrollFactor * 2);
+        });
     });
 
     return (
