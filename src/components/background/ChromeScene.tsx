@@ -25,27 +25,35 @@ const OBJECTS: ObjectConfig[] = [
 function SceneContent({ objectCount }: { objectCount: number }) {
     const groupRef = useRef<THREE.Group>(null);
 
-    // Hardened performance: Radial Dispersal Animation
-    // Objects push OUTWARD from the center as scroll increases
-    useFrame(() => {
+    // Hardened performance: Vortex/Spiral Animation
+    // Objects rotate in a spiral and push OUTWARD as scroll increases
+    useFrame((state) => {
         if (!groupRef.current) return;
         const scrollY = window.scrollY;
-        const scrollFactor = scrollY * 0.01;
+        const scrollFactor = scrollY * 0.005; // Controlled speed
+        const time = state.clock.getElapsedTime();
 
         groupRef.current.children.forEach((child, i) => {
             const config = OBJECTS[i];
             if (!config) return;
 
-            // Get direction vector from origin (0,0,0)
-            const dirX = config.position[0];
-            const dirY = config.position[1];
+            // Spiral math
+            const angleOffset = i * (Math.PI * 2 / objectCount);
+            const radius = Math.sqrt(config.position[0] ** 2 + config.position[1] ** 2);
 
-            // Push outward based on original position vector
-            child.position.x = config.position[0] + (dirX * scrollFactor * 0.5);
-            child.position.y = config.position[1] + (dirY * scrollFactor * 0.5);
+            // Push outward + Spiral rotation
+            const currentAngle = angleOffset + (scrollFactor * 2) + (time * 0.2);
+            const currentRadius = radius + (scrollFactor * 10);
 
-            // Still keep a slight receding Z for depth
-            child.position.z = config.position[2] - (scrollFactor * 2);
+            child.position.x = Math.cos(currentAngle) * currentRadius;
+            child.position.y = Math.sin(currentAngle) * currentRadius;
+
+            // Recede in Z
+            child.position.z = config.position[2] - (scrollFactor * 15);
+
+            // Subtle individual rotation
+            child.rotation.x += 0.01;
+            child.rotation.z += 0.005;
         });
     });
 
