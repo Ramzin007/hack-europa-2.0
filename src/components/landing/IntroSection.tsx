@@ -64,7 +64,7 @@ export function IntroSection() {
                     style={{ opacity }}
                     className="flex flex-col items-center text-center z-10"
                 >
-                    <span className="text-sm md:text-lg uppercase tracking-[0.4em] text-neon-purple mb-8 font-medium opacity-70">
+                    <span className="text-sm md:text-lg uppercase tracking-[0.4em] text-neon-blue mb-8 font-medium opacity-70">
                         SAIT Presents
                     </span>
 
