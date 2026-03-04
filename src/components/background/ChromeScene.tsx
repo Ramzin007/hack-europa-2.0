@@ -82,9 +82,9 @@ function SceneContent() {
                 type="coil"
                 position={[0, 0, -5]}
                 scale={2}
-                speed={0.4}
+                speed={0.15}
                 color="#b533ff"
-                rotationSpeed={0.8}
+                rotationSpeed={0.2}
             />
         </group>
     );

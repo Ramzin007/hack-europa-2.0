@@ -49,7 +49,7 @@ export function IntroSection() {
     return (
         <section
             ref={containerRef}
-            className="h-[150vh] relative z-10" // Reduced height for faster transition
+            className="h-[120vh] relative z-10" // Reduced height for faster transition
         >
             <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
                 {/* Massive translucent '2.0' behind */}
@@ -90,7 +90,7 @@ export function IntroSection() {
                             transition={{ delay: 0.5, duration: 1 }}
                             className="h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent mb-4"
                         />
-                        <span className="text-lg md:text-2xl font-light text-white/40 tracking-[0.2em]">VERSION 2.0</span>
+                        <span className="text-lg md:text-2xl font-light text-white/40 tracking-[0.2em]">2.0</span>
                     </div>
                 </motion.div>
 
