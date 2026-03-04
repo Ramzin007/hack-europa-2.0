@@ -1,15 +1,14 @@
+import type { ReactNode } from 'react';
 import { ParallaxBackground } from '../components/background/ParallaxBackground';
-import { ChromeScene } from '../components/background/ChromeScene';
-import CustomCursor from '../components/ui/CustomCursor';
 
-export function Layout({ children }: { children: React.ReactNode }) {
+interface LayoutProps {
+    children: ReactNode;
+}
+
+export function Layout({ children }: LayoutProps) {
     return (
-        <div className="min-h-screen bg-black text-white selection:bg-neon-purple/30 overflow-x-hidden">
-            <CustomCursor />
-            <div className="fixed inset-0 z-0 pointer-events-none">
-                <ChromeScene />
-                <ParallaxBackground />
-            </div>
+        <div className="relative min-h-screen w-full bg-[#000000] text-white selection:bg-fuchsia-500/30 selection:text-white font-sans flex flex-col">
+            <ParallaxBackground />
 
             {/* Film Grain Polish */}
             <div className="film-grain" />
