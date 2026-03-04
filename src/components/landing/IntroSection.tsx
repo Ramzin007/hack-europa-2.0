@@ -49,7 +49,7 @@ export function IntroSection() {
     return (
         <section
             ref={containerRef}
-            className="h-[200vh] relative z-10" // Extra height for scroll transition
+            className="h-[150vh] relative z-10" // Reduced height for faster transition
         >
             <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
                 {/* Massive translucent '2.0' behind */}

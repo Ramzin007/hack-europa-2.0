@@ -8,7 +8,7 @@ interface TimeLeft {
     seconds: number;
 }
 
-const TARGET_DATE = new Date('2026-03-14T00:00:00');
+const TARGET_DATE = new Date('2026-03-14T09:00:00');
 
 const TimeUnit = memo(({ value, label }: { value: number, label: string }) => {
     return (

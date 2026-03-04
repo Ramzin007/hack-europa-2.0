@@ -25,27 +25,30 @@ const OBJECTS: ObjectConfig[] = [
 function SceneContent({ objectCount }: { objectCount: number }) {
     const groupRef = useRef<THREE.Group>(null);
 
-    // Hardened performance: Radial Dispersal Animation
-    // Objects push OUTWARD from the center as scroll increases
+    // Hardened performance: Subtle Radial Dispersal Animation
+    // Objects push OUTWARD but stay visible as ambient elements
     useFrame(() => {
         if (!groupRef.current) return;
         const scrollY = window.scrollY;
-        const scrollFactor = scrollY * 0.01;
+        // Slower scroll factor for persistence
+        const scrollFactor = Math.min(scrollY * 0.005, 2);
 
         groupRef.current.children.forEach((child, i) => {
             const config = OBJECTS[i];
             if (!config) return;
 
-            // Get direction vector from origin (0,0,0)
             const dirX = config.position[0];
             const dirY = config.position[1];
 
-            // Push outward based on original position vector
-            child.position.x = config.position[0] + (dirX * scrollFactor * 0.5);
-            child.position.y = config.position[1] + (dirY * scrollFactor * 0.5);
+            // Subtle outward drift, clamped to keep them in view
+            child.position.x = config.position[0] + (dirX * scrollFactor * 0.3);
+            child.position.y = config.position[1] + (dirY * scrollFactor * 0.3);
 
-            // Still keep a slight receding Z for depth
-            child.position.z = config.position[2] - (scrollFactor * 2);
+            // Gentle receding for depth (clamped)
+            child.position.z = config.position[2] - (scrollFactor * 3);
+
+            // Add subtle floating motion
+            child.position.y += Math.sin(Date.now() * 0.001 + i) * 0.1;
         });
     });
 
@@ -59,14 +62,14 @@ function SceneContent({ objectCount }: { objectCount: number }) {
 }
 
 export const ChromeScene = memo(function ChromeScene() {
-    const [objectCount, setObjectCount] = useState(5);
+    const [objectCount, setObjectCount] = useState(3);
 
     useEffect(() => {
         const handleResize = () => {
             const width = window.innerWidth;
-            if (width < 768) setObjectCount(3);
-            else if (width < 1024) setObjectCount(4);
-            else setObjectCount(5);
+            if (width < 768) setObjectCount(2); // Reduced mobile count
+            else if (width < 1024) setObjectCount(2);
+            else setObjectCount(3); // Reduced desktop count
         };
         handleResize();
         window.addEventListener('resize', handleResize);
