@@ -49,7 +49,7 @@ export function IntroSection() {
     return (
         <section
             ref={containerRef}
-            className="h-[120vh] relative z-10" // Reduced height for faster transition
+            className="h-[105vh] relative z-10" // Reduced height for the fastest transition
         >
             <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
                 {/* Massive translucent '2.0' behind */}
@@ -64,21 +64,26 @@ export function IntroSection() {
                     style={{ opacity }}
                     className="flex flex-col items-center text-center z-10"
                 >
-                    <span className="text-xs md:text-sm uppercase tracking-[0.4em] text-neon-purple mb-8 font-medium opacity-70">
+                    <span className="text-sm md:text-lg uppercase tracking-[0.4em] text-neon-purple mb-8 font-medium opacity-70">
                         SAIT Presents
                     </span>
 
                     <div className="flex flex-col items-center select-none">
-                        {/* HACK */}
                         <div className="flex gap-2 md:gap-4 overflow-visible mb-2">
                             {"HACK".split("").map((char, i) => (
                                 <FallingLetter key={`h-${i}`} char={char} progress={scrollYProgress} index={i} />
                             ))}
                         </div>
                         {/* EUROPA */}
-                        <div className="flex gap-2 md:gap-4 overflow-visible">
+                        <div className="flex gap-2 md:gap-4 overflow-visible mb-2">
                             {"EUROPA".split("").map((char, i) => (
                                 <FallingLetter key={`e-${i}`} char={char} progress={scrollYProgress} index={i + 4} />
+                            ))}
+                        </div>
+                        {/* 2.0 */}
+                        <div className="flex gap-2 md:gap-4 overflow-visible">
+                            {"2.0".split("").map((char, i) => (
+                                <FallingLetter key={`v-${i}`} char={char} progress={scrollYProgress} index={i + 10} />
                             ))}
                         </div>
                     </div>
@@ -90,7 +95,6 @@ export function IntroSection() {
                             transition={{ delay: 0.5, duration: 1 }}
                             className="h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent mb-4"
                         />
-                        <span className="text-lg md:text-2xl font-light text-white/40 tracking-[0.2em]">2.0</span>
                     </div>
                 </motion.div>
 
