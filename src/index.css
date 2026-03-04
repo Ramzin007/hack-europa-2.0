@@ -65,6 +65,21 @@
     filter: drop-shadow(0 0 15px rgba(125, 211, 252, 0.4));
   }
 
+  .chrome-text-holographic {
+    background: linear-gradient(90deg,
+        #ffffff 0%,
+        #ff00ff 25%,
+        #00e5ff 50%,
+        #b533ff 75%,
+        #ffffff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% auto;
+    animation: text-shimmer 12s linear infinite;
+    filter: drop-shadow(0 0 15px rgba(255, 0, 255, 0.4));
+  }
+
   .chrome-border {
     border: 1px solid transparent;
     background-image: linear-gradient(to right, #000, #000), var(--chrome-gradient);
