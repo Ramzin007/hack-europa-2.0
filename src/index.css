@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@theme {
+  --color-neon-purple: var(--neon-purple);
+  --color-neon-magenta: var(--neon-magenta);
+  --color-neon-blue: var(--neon-blue);
+
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+@layer base {
+  :root {
+    --neon-purple: #b533ff;
+    --neon-magenta: #ff00ff;
+    --neon-blue: #00e5ff;
+
+    --chrome-gradient: linear-gradient(135deg,
+        rgba(242, 242, 242, 0.9) 0%,
+        rgba(215, 215, 215, 0.7) 30%,
+        rgba(130, 130, 130, 0.8) 50%,
+        rgba(255, 255, 255, 0.9) 70%,
+        rgba(255, 255, 255, 1) 100%);
+
+    --glass-bg: rgba(20, 20, 25, 0.4);
+    --glass-border: rgba(255, 255, 255, 0.1);
+  }
+
+  body {
+    @apply bg-[#000000] text-white antialiased overflow-x-hidden;
+    /* Prevent default scroll margin issues */
+    overscroll-behavior: none;
+  }
+}
+
+/* Custom utilities for animations that Framer Motion relies on, plus reusable chrome effects */
+@layer utilities {
+  .chrome-text {
+    background: linear-gradient(90deg,
+        #ffffff 0%,
+        #00e5ff 25%,
+        #00ffaa 50%,
+        #70ffcc 75%,
+        #ffffff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% auto;
+    animation: text-shimmer 12s linear infinite;
+    /* premium soft glow - adjusted for cyan/emerald theme */
+    filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.25));
+  }
+
+  .chrome-border {
+    border: 1px solid transparent;
+    background-image: linear-gradient(to right, #000, #000), var(--chrome-gradient);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+  }
+
+  .glass-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}
+
+/* Base keyframes for ambient blobs */
+@keyframes float-slow {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+
+  33% {
+    transform: translate(30px, -50px) rotate(10deg) scale(1.05);
+  }
+
+  66% {
+    transform: translate(-20px, 20px) rotate(-5deg) scale(0.95);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+}
+
+@keyframes float-slow-reverse {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+
+  33% {
+    transform: translate(-40px, 30px) rotate(-10deg) scale(0.95);
+  }
+
+  66% {
+    transform: translate(20px, -40px) rotate(5deg) scale(1.05);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+}
+
+@keyframes chrome-sweep {
+  0% {
+    transform: translateX(-150%) skewX(-15deg);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(250%) skewX(-15deg);
+    opacity: 0;
+  }
+}
+
+@keyframes text-shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
