@@ -170,8 +170,11 @@ export function IntroSection() {
                     </div>
                 </motion.div>
 
-                {/* Ambient Floor Glow */}
-                <div className="absolute bottom-0 left-0 right-0 h-[30vh] bg-gradient-to-t from-sky-400/20 to-transparent pointer-events-none" />
+                {/* Atmospheric Floor Glow - Mixing into S2 */}
+                <motion.div
+                    style={{ opacity: useTransform(portalProgress, [0, 0.5, 1], [1, 1, 0.8]) }}
+                    className="absolute bottom-[-2px] left-0 right-0 h-[70vh] bg-gradient-to-t from-sky-400/30 to-transparent pointer-events-none"
+                />
 
                 {/* Explore Button */}
                 <div className="absolute bottom-16 left-1/2 -translate-x-1/2 z-30">

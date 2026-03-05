@@ -79,6 +79,12 @@ export function EventSection({ onRegister }: EventSectionProps) {
             ref={sectionRef}
             className="min-h-screen relative flex items-center justify-center py-32 px-6 overflow-hidden"
         >
+            {/* Atmospheric Top Glow - Mixing S1 Ambiance */}
+            <motion.div
+                style={{ opacity: useTransform(smoothProgress, [0, 0.1], [0, 1]) }}
+                className="absolute top-[-2px] left-0 right-0 h-[70vh] bg-gradient-to-b from-sky-400/30 to-transparent pointer-events-none z-0"
+            />
+
             <motion.div
                 style={{
                     opacity: sectionOpacity,
