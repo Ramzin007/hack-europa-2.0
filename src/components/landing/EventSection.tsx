@@ -1,4 +1,4 @@
-import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useTransform, useSpring } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import { Countdown } from './Countdown';
 import { ChromeButton } from '../ui/ChromeButton';
@@ -51,19 +51,19 @@ export function EventSection({ onRegister }: EventSectionProps) {
         offset: ["start end", "end start"]
     });
 
-    const prizeScale = useTransform(scrollYProgress, [0.2, 0.5, 0.8], [0.8, 1.1, 0.8]);
-    const prizeRotate = useTransform(scrollYProgress, [0.2, 0.8], [-2, 2]);
+    const smoothProgress = useSpring(scrollYProgress, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001
+    });
 
-    const containerVariants: Variants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.2,
-                delayChildren: 0.3
-            }
-        }
-    };
+    const sectionOpacity = useTransform(smoothProgress, [0, 0.15], [0, 1]);
+    const sectionScale = useTransform(smoothProgress, [0, 0.15], [0.95, 1]);
+    const sectionBlur = useTransform(smoothProgress, [0, 0.15], ["blur(8px)", "blur(0px)"]);
+    const sectionY = useTransform(smoothProgress, [0, 0.15], [50, 0]);
+
+    const prizeScale = useTransform(smoothProgress, [0.1, 0.4, 0.7], [0.8, 1.1, 0.8]);
+    const prizeRotate = useTransform(smoothProgress, [0.1, 0.7], [-2, 2]);
 
     const itemVariants: Variants = {
         hidden: { opacity: 0, y: 30 },
@@ -80,10 +80,16 @@ export function EventSection({ onRegister }: EventSectionProps) {
             className="min-h-screen relative flex items-center justify-center py-32 px-6 overflow-hidden"
         >
             <motion.div
-                variants={containerVariants}
+                style={{
+                    opacity: sectionOpacity,
+                    scale: sectionScale,
+                    y: sectionY,
+                    filter: sectionBlur,
+                    willChange: "transform, opacity, filter"
+                }}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ margin: "-100px" }}
                 className="max-w-6xl w-full text-center z-10"
             >
                 {/* 1. Main Heading */}

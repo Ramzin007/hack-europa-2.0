@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring, useMotionValue, useMotionValueEvent, MotionValue } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import { ChromeButton } from '../ui/ChromeButton';
 import { cn } from '../../lib/utils';
@@ -47,9 +47,40 @@ export function IntroSection() {
         }, 10);
     };
 
-    const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-    const bgOpacity = useTransform(scrollYProgress, [0, 0.5], [0.7, 0]);
-    const bgScale = useTransform(scrollYProgress, [0, 0.5], [1, 1.1]);
+    // Smooth scroll progress to eliminate jitter
+    const smoothProgress = useSpring(scrollYProgress, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001
+    });
+
+    // Portal Progress handles asymmetrical timing
+    const portalProgress = useMotionValue(0);
+    const lastScrollY = useRef(0);
+
+    useMotionValueEvent(smoothProgress, "change", (latest) => {
+        const direction = latest > lastScrollY.current ? "down" : "up";
+        lastScrollY.current = latest;
+
+        // ASYMMETRICAL LOGIC:
+        // Forward (down): Finish by 0.3
+        // Reverse (up): Start back at 0.5 (half display)
+        if (direction === "down") {
+            // Map 0 -> 0.3 to 0 -> 1
+            const p = Math.min(1, latest / 0.3);
+            portalProgress.set(p);
+        } else {
+            // Map 0 -> 0.5 to 0 -> 1 (slower return)
+            const p = Math.min(1, latest / 0.5);
+            portalProgress.set(p);
+        }
+    });
+
+    const opacity = useTransform(portalProgress, [0, 1], [1, 0]);
+    const bgOpacity = useTransform(portalProgress, [0, 0.8], [0.7, 0]);
+    const bgScale = useTransform(portalProgress, [0, 1], [1, 5]);
+    const mainScale = useTransform(portalProgress, [0, 1], [1, 1.15]);
+    const mainY = useTransform(portalProgress, [0, 1], [0, -100]);
 
     return (
         <section
@@ -59,14 +90,19 @@ export function IntroSection() {
             <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden">
                 {/* massive '2.0' backdrop - Holographic Glass Style */}
                 <motion.div
-                    style={{ opacity: bgOpacity, scale: bgScale }}
+                    style={{
+                        opacity: bgOpacity,
+                        scale: bgScale,
+                        filter: useTransform(portalProgress, [0.4, 1], ["blur(0px)", "blur(12px)"]),
+                        willChange: "transform, opacity, filter"
+                    }}
                     className="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
                 >
                     <div className="relative flex items-center justify-center">
                         {/* 1. Frosted Glass Body */}
                         <span className="text-[35vw] md:text-[25vw] font-black leading-none select-none tracking-tighter
-                            text-white/5 backdrop-blur-[20px] bg-clip-text
-                            drop-shadow-[0_0_100px_rgba(255,255,255,0.1)]
+                            text-white/20 backdrop-blur-[20px] bg-clip-text
+                            drop-shadow-[0_0_120px_rgba(255,255,255,0.2)]
                         ">
                             2.0
                         </span>
@@ -74,8 +110,9 @@ export function IntroSection() {
                         {/* 2. Holographic Refractive Core */}
                         <div className="absolute inset-0 flex items-center justify-center">
                             <span className="text-[35vw] md:text-[25vw] font-black leading-none select-none tracking-tighter
-                                bg-gradient-to-tr from-cyan-400/30 via-magenta-500/20 to-lavender-400/30 bg-clip-text text-transparent
-                                mix-blend-screen opacity-80 animate-[holographic-sweep_8s_ease_infinite] bg-[length:200%_200%]
+                                bg-gradient-to-tr from-cyan-400/40 via-magenta-500/30 to-lavender-400/40 bg-clip-text text-transparent
+                                mix-blend-screen opacity-100 animate-[holographic-sweep_8s_ease_infinite] bg-[length:200%_200%]
+                                drop-shadow-[0_0_30px_rgba(255,255,255,0.2)]
                             ">
                                 2.0
                             </span>
@@ -94,7 +131,13 @@ export function IntroSection() {
                 </motion.div>
 
                 <motion.div
-                    style={{ opacity }}
+                    style={{
+                        opacity,
+                        scale: mainScale,
+                        y: mainY,
+                        filter: useTransform(portalProgress, [0, 1], ["blur(0px)", "blur(10px)"]),
+                        willChange: "transform, opacity, filter"
+                    }}
                     className="relative flex flex-col items-center text-center z-10 px-4"
                 >
                     {/* Premium Badge */}

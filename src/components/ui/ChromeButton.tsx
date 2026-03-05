@@ -14,8 +14,8 @@ export function ChromeButton({ children, className, glowColor = 'purple', ...pro
     const x = useMotionValue(0);
     const y = useMotionValue(0);
 
-    const springX = useSpring(x, { stiffness: 150, damping: 15, mass: 0.1 });
-    const springY = useSpring(y, { stiffness: 150, damping: 15, mass: 0.1 });
+    const springX = useSpring(x, { stiffness: 400, damping: 25, mass: 0.1 });
+    const springY = useSpring(y, { stiffness: 400, damping: 25, mass: 0.1 });
 
     const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
         if (!buttonRef.current) return;
@@ -47,15 +47,16 @@ export function ChromeButton({ children, className, glowColor = 'purple', ...pro
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className={cn(
-                "relative rounded-full px-10 py-5 font-bold tracking-[0.2em] font-sans overflow-hidden transition-all duration-300",
+                "relative rounded-full px-10 py-5 font-bold tracking-[0.2em] font-sans overflow-hidden transition-all duration-150",
                 "bg-gradient-to-br from-[#121216] to-[#0a0a0c] border border-white/20",
                 glowClass,
                 "group will-change-transform z-20 cursor-pointer block",
                 className
             )}
+            transition={{ duration: 0.15 }}
             {...props}
         >
-            <span className="relative z-10 chrome-text text-lg group-hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.9)] transition-all duration-500">
+            <span className="relative z-10 chrome-text text-lg group-hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.9)] transition-all duration-150">
                 {children}
             </span>
 
