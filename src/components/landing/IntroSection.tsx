@@ -155,7 +155,7 @@ export function IntroSection() {
                     >
                         <div className="w-2 h-2 rounded-full bg-sky-400 animate-pulse" />
                         <span className="text-[10px] md:text-xs uppercase tracking-[0.4em] font-bold text-white/80">
-                            HOSTED BY THE SAIT
+                            HOSTED BY SAIT
                         </span>
                     </motion.div>
 
