@@ -102,7 +102,7 @@ export function IntroSection() {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 0.8, y: 0 }}
                         transition={{ delay: 0.1, duration: 0.6 }}
-                        className="mb-16 px-6 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md flex items-center gap-3"
+                        className="mb-32 px-6 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md flex items-center gap-3"
                     >
                         <div className="w-2 h-2 rounded-full bg-sky-400 animate-pulse" />
                         <span className="text-[10px] md:text-xs uppercase tracking-[0.4em] font-bold text-white/80">
