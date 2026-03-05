@@ -35,9 +35,17 @@ export function AboutUsSection() {
                 >
                     <GlassCard className="p-10 md:p-16 h-full flex flex-col justify-center border-neon-blue/20">
                         <h2 className="text-3xl md:text-5xl font-black text-white mb-8 tracking-tighter">ABOUT HACK EUROPA</h2>
-                        <p className="text-white/60 text-lg leading-relaxed font-light">
-                            HACK EUROPA 2.0 is the second edition of our flagship pan-India hackathon. It's a 24-hour celebration of code, creativity, and community. We invite the brightest minds to solve real-world problems using the latest technologies in an environment that feels like the future.
-                        </p>
+                        <div className="text-white/60 text-lg leading-relaxed font-light">
+                            <p className="mb-6">
+                                Hack Europa is an annual hackathon organized by the Students Association of Information Technology at the School of Engineering, CUSAT. It provides a platform for students to collaborate, innovate, and build technology-driven solutions to real-world problems.
+                            </p>
+                            <p className="mb-6">
+                                Since its inception in 2025, Hack Europa has grown into a recognized event that brings together passionate developers, designers, and problem solvers.
+                            </p>
+                            <p>
+                                This year, Hack Europa 2.0 expands its reach by inviting students from all disciplines and colleges, encouraging interdisciplinary collaboration and diverse ideas.
+                            </p>
+                        </div>
                     </GlassCard>
                 </motion.div>
             </div>
