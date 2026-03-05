@@ -43,7 +43,13 @@ export function IntroSection() {
     const handleExplore = () => {
         setIsUnlocked(true);
         setTimeout(() => {
-            window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+            if (containerRef.current) {
+                // Scroll to the end of Section 1 to land exactly at Section 2
+                window.scrollTo({
+                    top: containerRef.current.offsetHeight,
+                    behavior: 'smooth'
+                });
+            }
         }, 10);
     };
 
@@ -85,7 +91,7 @@ export function IntroSection() {
     return (
         <section
             ref={containerRef}
-            className="h-[110vh] relative z-20"
+            className="h-[115vh] relative z-20"
         >
             <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden">
                 {/* massive '2.0' backdrop - Holographic Glass Style */}
