@@ -22,7 +22,7 @@ export function AboutUsSection() {
                             className="scale-90 origin-left"
                             glowColor="purple"
                         >
-                            VISIT OFFICIAL WEBSITE
+                            VISIT SAIT
                         </ChromeButton>
                     </GlassCard>
                 </motion.div>

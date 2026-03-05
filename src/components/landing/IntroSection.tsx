@@ -57,23 +57,35 @@ export function IntroSection() {
             className="h-[105vh] relative z-20"
         >
             <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden">
-                {/* massive '2.0' backdrop - Liquid Crystal (Iridescent) Style */}
+                {/* massive '2.0' backdrop - Holographic Glass Style */}
                 <motion.div
                     style={{ opacity: bgOpacity, scale: bgScale }}
                     className="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
                 >
                     <div className="relative flex items-center justify-center">
+                        {/* 1. Frosted Glass Body */}
                         <span className="text-[35vw] md:text-[25vw] font-black leading-none select-none tracking-tighter
-                            bg-gradient-to-br from-cyan-400/40 via-white/20 to-purple-600/40 bg-clip-text text-transparent
-                            drop-shadow-[0_0_80px_rgba(192,132,252,0.3)] blur-[0.5px]
+                            text-white/5 backdrop-blur-[20px] bg-clip-text
+                            drop-shadow-[0_0_100px_rgba(255,255,255,0.1)]
                         ">
                             2.0
                         </span>
-                        {/* Iridescent Refractive Overlay */}
+
+                        {/* 2. Holographic Refractive Core */}
                         <div className="absolute inset-0 flex items-center justify-center">
                             <span className="text-[35vw] md:text-[25vw] font-black leading-none select-none tracking-tighter
-                                bg-gradient-to-tr from-magenta-500/30 via-cyan-400/20 to-purple-500/30 bg-clip-text text-transparent
-                                backdrop-blur-[12px] mix-blend-screen opacity-90
+                                bg-gradient-to-tr from-cyan-400/30 via-magenta-500/20 to-lavender-400/30 bg-clip-text text-transparent
+                                mix-blend-screen opacity-80 animate-[holographic-sweep_8s_ease_infinite] bg-[length:200%_200%]
+                            ">
+                                2.0
+                            </span>
+                        </div>
+
+                        {/* 3. Razor-thin Edge Highlights */}
+                        <div className="absolute inset-0 flex items-center justify-center">
+                            <span className="text-[35vw] md:text-[25vw] font-black leading-none select-none tracking-tighter
+                                bg-gradient-to-br from-white/40 via-transparent to-white/20 bg-clip-text text-transparent
+                                drop-shadow-[0_0_15px_rgba(255,255,255,0.3)] mix-blend-overlay
                             ">
                                 2.0
                             </span>
