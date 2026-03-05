@@ -33,9 +33,9 @@ export function ChromeButton({ children, className, glowColor = 'purple', ...pro
     };
 
     const glowClass = {
-        purple: 'shadow-[0_0_30px_rgba(181,51,255,0.4)]',
-        magenta: 'shadow-[0_0_30px_rgba(255,0,255,0.4)]',
-        blue: 'shadow-[0_0_30px_rgba(0,229,255,0.4)]',
+        purple: 'shadow-[0_0_30px_rgba(60,9,108,0.5)]',
+        magenta: 'shadow-[0_0_30px_rgba(255,0,85,0.5)]',
+        blue: 'shadow-[0_0_30px_rgba(2,62,138,0.5)]',
     }[glowColor];
 
     return (

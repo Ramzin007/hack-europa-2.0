@@ -57,7 +57,7 @@ export function EventSection({ onRegister }: EventSectionProps) {
                     <h2 className="text-4xl md:text-6xl font-black text-white mb-4 tracking-tight">
                         HACK EUROPA 2.0
                     </h2>
-                    <p className="text-xl md:text-2xl font-light text-white/60 tracking-[0.3em] uppercase mb-2">
+                    <p className="text-xl md:text-2xl font-light text-neon-blue tracking-[0.3em] uppercase mb-2">
                         14 March 2026 • 09:00 AM
                     </p>
                     <p className="text-sm md:text-base text-white/80 tracking-widest uppercase font-medium mb-6">

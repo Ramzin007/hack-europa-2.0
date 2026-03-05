@@ -10,10 +10,9 @@
 
 @layer base {
   :root {
-    /* Updated to match poster color scheme */
-    --neon-purple: #8a2be2;
-    --neon-magenta: #ff1493;
-    --neon-blue: #4169e1;
+    --neon-purple: #b533ff;
+    --neon-magenta: #ff00ff;
+    --neon-blue: #00e5ff;
 
     --chrome-gradient: linear-gradient(135deg,
         rgba(242, 242, 242, 0.9) 0%,

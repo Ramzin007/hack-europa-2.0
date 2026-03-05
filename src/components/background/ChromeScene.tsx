@@ -36,35 +36,35 @@ function SceneContent() {
             targetX = 0;
             targetY = 0;
             targetZ = -3;
-            targetScale = 2.5 * m;
+            targetScale = 2.0 * m;
         } else if (progress < 2) {
             // Event Section: Move top right
             const p = progress - 1;
             targetX = THREE.MathUtils.lerp(0, 4 * m, p);
             targetY = THREE.MathUtils.lerp(0, 2 * m, p);
             targetZ = THREE.MathUtils.lerp(-3, -6, p);
-            targetScale = THREE.MathUtils.lerp(2.5 * m, 1.5 * m, p);
+            targetScale = THREE.MathUtils.lerp(2.0 * m, 1.2 * m, p);
         } else if (progress < 3) {
             // About Us: Move left
             const p = progress - 2;
             targetX = THREE.MathUtils.lerp(4 * m, -4 * m, p);
             targetY = THREE.MathUtils.lerp(2 * m, 0, p);
             targetZ = THREE.MathUtils.lerp(-6, -4, p);
-            targetScale = THREE.MathUtils.lerp(1.5 * m, 1.8 * m, p);
+            targetScale = THREE.MathUtils.lerp(1.2 * m, 1.5 * m, p);
         } else if (progress < 4) {
             // Schedule: Move bottom right
             const p = progress - 3;
             targetX = THREE.MathUtils.lerp(-4 * m, 3 * m, p);
             targetY = THREE.MathUtils.lerp(0, -2 * m, p);
             targetZ = THREE.MathUtils.lerp(-4, -6, p);
-            targetScale = THREE.MathUtils.lerp(1.8 * m, 1.3 * m, p);
+            targetScale = THREE.MathUtils.lerp(1.5 * m, 1.0 * m, p);
         } else {
             // Final CTA: Back to center, very large
             const p = Math.min((progress - 4) * 2, 1);
             targetX = THREE.MathUtils.lerp(3 * m, 0, p);
             targetY = THREE.MathUtils.lerp(-2 * m, 0, p);
             targetZ = THREE.MathUtils.lerp(-6, -2, p);
-            targetScale = THREE.MathUtils.lerp(1.3 * m, 3.0 * m, p);
+            targetScale = THREE.MathUtils.lerp(1.0 * m, 2.5 * m, p);
         }
 
         // Smoothly interpolate current position towards target position
@@ -83,7 +83,7 @@ function SceneContent() {
                 position={[0, 0, -5]}
                 scale={2}
                 speed={0.05}
-                color="#b3cbf2"
+                color="#b533ff"
                 rotationSpeed={0.05}
             />
         </group>
@@ -109,9 +109,9 @@ export const ChromeScene = memo(function ChromeScene() {
                 <ambientLight intensity={0.4} />
                 <pointLight position={[10, 10, 10]} intensity={1} color="#ffffff" />
 
-                <spotLight position={[-20, 10, -10]} angle={0.5} penumbra={1} intensity={2} color="#ff1493" />
-                <spotLight position={[20, -10, -10]} angle={0.5} penumbra={1} intensity={2} color="#8a2be2" />
-                <spotLight position={[0, -20, 5]} angle={0.5} penumbra={1} intensity={1} color="#ffffff" />
+                <spotLight position={[-20, 10, -10]} angle={0.5} penumbra={1} intensity={2} color="#ff00ff" />
+                <spotLight position={[20, -10, -10]} angle={0.5} penumbra={1} intensity={2} color="#00e5ff" />
+                <spotLight position={[0, -20, 5]} angle={0.5} penumbra={1} intensity={1} color="#b533ff" />
 
                 <Environment preset="night" />
 
