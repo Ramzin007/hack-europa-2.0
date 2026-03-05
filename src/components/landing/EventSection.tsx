@@ -77,7 +77,7 @@ export function EventSection({ onRegister }: EventSectionProps) {
     return (
         <section
             ref={sectionRef}
-            className="min-h-screen relative flex items-center justify-center py-32 px-6 overflow-hidden"
+            className="min-h-screen relative flex items-center justify-center py-20 px-6 overflow-hidden"
         >
             {/* Atmospheric Top Glow - Mixing S1 Ambiance */}
             <motion.div

@@ -4,7 +4,7 @@ import { ChromeButton } from '../ui/ChromeButton';
 
 export function AboutUsSection() {
     return (
-        <section className="min-h-screen py-32 px-6 flex items-center">
+        <section className="min-h-screen py-20 px-6 flex items-center">
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <motion.div
                     initial={{ opacity: 0, x: -30 }}

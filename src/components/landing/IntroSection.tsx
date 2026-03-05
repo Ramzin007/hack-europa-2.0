@@ -85,7 +85,7 @@ export function IntroSection() {
     return (
         <section
             ref={containerRef}
-            className="h-[105vh] relative z-20"
+            className="h-[110vh] relative z-20"
         >
             <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden">
                 {/* massive '2.0' backdrop - Holographic Glass Style */}

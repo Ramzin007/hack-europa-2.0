@@ -57,7 +57,7 @@ const cardVariants: Variants = {
 
 export function GuidelinesSection() {
     return (
-        <section className="relative py-32 px-6 overflow-hidden min-h-screen flex flex-col justify-center">
+        <section className="relative py-20 px-6 overflow-hidden min-h-screen flex flex-col justify-center">
             <div className="max-w-6xl mx-auto relative z-10 w-full">
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}

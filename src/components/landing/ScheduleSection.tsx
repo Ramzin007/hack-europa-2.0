@@ -45,7 +45,7 @@ const SCHEDULE_DATA = [
 
 export function ScheduleSection() {
     return (
-        <section className="py-32 px-6 relative overflow-hidden">
+        <section className="py-16 px-6 relative overflow-hidden">
             <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
