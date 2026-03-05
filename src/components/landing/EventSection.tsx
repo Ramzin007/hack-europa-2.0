@@ -57,8 +57,11 @@ export function EventSection({ onRegister }: EventSectionProps) {
                     <h2 className="text-4xl md:text-6xl font-black text-white mb-4 tracking-tight">
                         HACK EUROPA 2.0
                     </h2>
-                    <p className="text-xl md:text-2xl font-light text-neon-blue tracking-[0.3em] uppercase mb-6">
+                    <p className="text-xl md:text-2xl font-light text-neon-blue tracking-[0.3em] uppercase mb-2">
                         14 March 2026 • 09:00 AM
+                    </p>
+                    <p className="text-sm md:text-base text-white/80 tracking-widest uppercase font-medium mb-6">
+                        Software block, SOE, CUSAT
                     </p>
                     <QuoteRotator />
                 </div>
@@ -72,9 +75,6 @@ export function EventSection({ onRegister }: EventSectionProps) {
                     >
                         REGISTER NOW
                     </ChromeButton>
-                    <p className="text-sm text-white/80 tracking-widest uppercase font-medium">
-                        Software block, SOE, CUSAT
-                    </p>
                 </div>
             </motion.div>
 
