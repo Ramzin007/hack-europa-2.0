@@ -83,16 +83,16 @@
   .chrome-text-custom {
     background: linear-gradient(90deg,
         #ffffff 0%,
-        #8B7EA9 25%,
-        #9E80AC 50%,
-        #B57CAF 75%,
+        #e2e8f0 25%,
+        #bae6fd 50%,
+        #38bdf8 75%,
         #ffffff 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     background-size: 200% auto;
     animation: text-shimmer 12s linear infinite;
-    filter: drop-shadow(0 0 15px rgba(158, 128, 172, 0.4));
+    filter: drop-shadow(0 0 15px rgba(56, 189, 248, 0.4));
   }
 
   .chrome-border {
