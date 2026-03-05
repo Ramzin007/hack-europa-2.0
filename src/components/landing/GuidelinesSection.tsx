@@ -15,7 +15,7 @@ const guidelines = [
     },
     {
         title: "Hack Duration",
-        text: "Participants will have 8 hours to design and build their solution.",
+        text: "Participants will have 10 hours to design and build their solution.",
         icon: Timer
     },
     {
