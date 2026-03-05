@@ -64,7 +64,7 @@ export function IntroSection() {
                     style={{ opacity }}
                     className="flex flex-col items-center text-center z-10"
                 >
-                    <span className="text-sm md:text-lg uppercase tracking-[0.4em] text-sky-200 mb-8 font-medium opacity-70">
+                    <span className="text-sm md:text-lg uppercase tracking-[0.4em] text-white/80 mb-8 font-medium">
                         SAIT Presents
                     </span>
 
@@ -98,8 +98,7 @@ export function IntroSection() {
                     </div>
                 </motion.div>
 
-                {/* Ambient Floor Glow */}
-                <div className="absolute bottom-0 left-0 right-0 h-[30vh] bg-gradient-to-t from-sky-400/20 to-transparent pointer-events-none" />
+                {/* Ambient Floor Glow handled by ParallaxBackground */}
             </div>
         </section>
     );

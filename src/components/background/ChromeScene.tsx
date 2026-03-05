@@ -83,7 +83,7 @@ function SceneContent() {
                 position={[0, 0, -5]}
                 scale={2}
                 speed={0.05}
-                color="#b533ff"
+                color="#b3cbf2"
                 rotationSpeed={0.05}
             />
         </group>
@@ -109,9 +109,9 @@ export const ChromeScene = memo(function ChromeScene() {
                 <ambientLight intensity={0.4} />
                 <pointLight position={[10, 10, 10]} intensity={1} color="#ffffff" />
 
-                <spotLight position={[-20, 10, -10]} angle={0.5} penumbra={1} intensity={2} color="#ff00ff" />
-                <spotLight position={[20, -10, -10]} angle={0.5} penumbra={1} intensity={2} color="#00e5ff" />
-                <spotLight position={[0, -20, 5]} angle={0.5} penumbra={1} intensity={1} color="#b533ff" />
+                <spotLight position={[-20, 10, -10]} angle={0.5} penumbra={1} intensity={2} color="#ff1493" />
+                <spotLight position={[20, -10, -10]} angle={0.5} penumbra={1} intensity={2} color="#8a2be2" />
+                <spotLight position={[0, -20, 5]} angle={0.5} penumbra={1} intensity={1} color="#ffffff" />
 
                 <Environment preset="night" />
 

@@ -10,9 +10,10 @@
 
 @layer base {
   :root {
-    --neon-purple: #b533ff;
-    --neon-magenta: #ff00ff;
-    --neon-blue: #00e5ff;
+    /* Updated to match poster color scheme */
+    --neon-purple: #8a2be2;
+    --neon-magenta: #ff1493;
+    --neon-blue: #4169e1;
 
     --chrome-gradient: linear-gradient(135deg,
         rgba(242, 242, 242, 0.9) 0%,
@@ -23,6 +24,22 @@
 
     --glass-bg: rgba(20, 20, 25, 0.4);
     --glass-border: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Hide scrollbar for Chrome, Safari, Edge */
+  ::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+
+  /* Hide scrollbar for Firefox */
+  html {
+    scrollbar-width: none;
+  }
+
+  /* Hide scrollbar for IE */
+  html {
+    -ms-overflow-style: none;
   }
 
   body {

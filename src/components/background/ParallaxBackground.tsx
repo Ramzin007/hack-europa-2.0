@@ -15,8 +15,8 @@ export const ParallaxBackground = memo(function ParallaxBackground() {
                 }}
             />
 
-            {/* Spotlight Floor Gradient (Lowered z-index to sit behind UI but in front of 3D objects if needed, or behind both) */}
-            <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-[var(--neon-purple)]/20 via-[var(--neon-blue)]/5 to-transparent z-10" />
+            {/* Spotlight Floor Gradient */}
+            <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-r from-[#4169e1]/30 via-[#8a2be2]/30 to-[#ff1493]/30 z-10 fade-to-top" style={{ maskImage: 'linear-gradient(to top, black, transparent)', WebkitMaskImage: 'linear-gradient(to top, black, transparent)' }} />
         </div>
     );
 });
