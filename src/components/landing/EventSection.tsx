@@ -160,7 +160,7 @@ export function EventSection({ onRegister }: EventSectionProps) {
                         onClick={onRegister}
                         className="scale-125 md:scale-[1.5] hover:shadow-[0_0_50px_rgba(255,0,255,0.4)] transition-all duration-500"
                     >
-                        INITIALIZE REGISTRATION
+                        REGISTER NOW
                     </ChromeButton>
 
                     <motion.a

@@ -28,7 +28,7 @@ function App() {
   const [view, setView] = useState<View>('landing');
 
   const handleRegister = () => {
-    window.location.assign('https://docs.google.com/forms/u/0/');
+    window.location.assign('https://luma.com/5npcv30r');
   };
 
   return (
