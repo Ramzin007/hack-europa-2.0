@@ -17,13 +17,15 @@ export function AboutUsSection() {
                         <p className="text-white/60 text-lg leading-relaxed font-light mb-10">
                             Founded in 1995, the Department of Information Technology at Cochin University of Science and Technology is a dynamic hub of innovation. Our dedicated faculty explores user-centric interfaces, cybersecurity, and artificial intelligence, pushing the boundaries of IT. Committed to excellence, we provide a holistic education in cutting-edge technologies. The <span className="font-bold text-[#e2d5f8] drop-shadow-[0_0_10px_rgba(226,213,248,0.4)]">Student Association of IT (SAIT)</span> enhances student experience through workshops, magazines, and tech projects, fostering collaboration and creating a vibrant learning environment in the ever-evolving field of Information Technology.
                         </p>
-                        <ChromeButton
-                            onClick={() => window.open('https://sait-opal.vercel.app/', '_blank')}
-                            className="scale-90 origin-left"
-                            glowColor="purple"
-                        >
-                            VISIT SAIT
-                        </ChromeButton>
+                        <div className="w-full flex justify-center md:justify-start">
+                            <ChromeButton
+                                onClick={() => window.open('https://sait-opal.vercel.app/', '_blank')}
+                                className="scale-90 origin-center md:origin-left"
+                                glowColor="purple"
+                            >
+                                VISIT SAIT
+                            </ChromeButton>
+                        </div>
                     </GlassCard>
                 </motion.div>
 

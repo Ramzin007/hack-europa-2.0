@@ -166,7 +166,7 @@ export function EventSection({ onRegister }: EventSectionProps) {
                 >
                     <ChromeButton
                         onClick={onRegister}
-                        className="scale-125 md:scale-[1.5] hover:shadow-[0_0_50px_rgba(255,0,255,0.4)] transition-all duration-500"
+                        className="scale-100 md:scale-[1.5] px-12 py-6 md:px-8 md:py-4 hover:shadow-[0_0_50px_rgba(255,0,255,0.4)] transition-all duration-500"
                     >
                         REGISTER NOW
                     </ChromeButton>

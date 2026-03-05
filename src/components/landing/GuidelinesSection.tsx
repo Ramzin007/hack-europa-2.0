@@ -90,7 +90,7 @@ export function GuidelinesSection() {
                                     borderColor: "rgba(168, 85, 247, 0.4)",
                                     boxShadow: "0 0 25px rgba(168, 85, 247, 0.4)"
                                 }}
-                                className="glass-card p-8 rounded-xl border border-purple-500/20 bg-white/5 backdrop-blur-md transition-all duration-300 flex flex-col items-start gap-4 group"
+                                className="glass-card p-10 md:p-8 rounded-xl border border-purple-500/20 bg-white/5 backdrop-blur-md transition-all duration-300 flex flex-col items-start gap-4 group mx-auto md:mx-0 max-w-[90%] md:max-w-none"
                             >
                                 <div className="p-3 bg-purple-500/10 rounded-lg group-hover:bg-purple-500/20 transition-colors">
                                     <Icon className="w-8 h-8 text-purple-400" />

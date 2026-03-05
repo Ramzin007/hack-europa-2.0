@@ -13,7 +13,7 @@ function FallingLetter({ char, progress, index, className }: { char: string, pro
                 opacity: letterOpacity,
                 display: 'inline-block'
             }}
-            className={cn("text-6xl md:text-9xl font-black leading-none tracking-tighter", className || "chrome-text-center-radiant")}
+            className={cn("text-[clamp(3.5rem,15vw,9rem)] font-black leading-none tracking-tighter", className || "chrome-text-center-radiant")}
         >
             {char}
         </motion.span>

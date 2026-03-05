@@ -29,48 +29,49 @@ function SceneContent() {
         let targetZ = -5;
         let targetScale = 2;
 
-        const m = isMobile ? 0.6 : 1;
+        const m = isMobile ? 0.5 : 1; // More aggressive scale reduction
+        const zOff = isMobile ? -3 : 0; // Push further back on mobile
 
         if (progress < 1) {
             // Intro: Centered, large
             targetX = 0;
             targetY = 0;
-            targetZ = -3;
+            targetZ = -3 + zOff;
             targetScale = 2.0 * m;
         } else if (progress < 2) {
             // Event Section: Move top right
             const p = progress - 1;
             targetX = THREE.MathUtils.lerp(0, 4 * m, p);
             targetY = THREE.MathUtils.lerp(0, 2 * m, p);
-            targetZ = THREE.MathUtils.lerp(-3, -6, p);
+            targetZ = THREE.MathUtils.lerp(-3 + zOff, -6 + zOff, p);
             targetScale = THREE.MathUtils.lerp(2.0 * m, 1.2 * m, p);
         } else if (progress < 3) {
             // About Us: Move left
             const p = progress - 2;
             targetX = THREE.MathUtils.lerp(4 * m, -4 * m, p);
             targetY = THREE.MathUtils.lerp(2 * m, 0, p);
-            targetZ = THREE.MathUtils.lerp(-6, -4, p);
+            targetZ = THREE.MathUtils.lerp(-6 + zOff, -4 + zOff, p);
             targetScale = THREE.MathUtils.lerp(1.2 * m, 1.5 * m, p);
         } else if (progress < 4) {
             // Guidelines: Move to top left
             const p = progress - 3;
             targetX = THREE.MathUtils.lerp(-4 * m, -3 * m, p);
-            targetY = THREE.MathUtils.lerp(0, 3 * m, p);
-            targetZ = THREE.MathUtils.lerp(-4, -5, p);
+            targetY = THREE.MathUtils.lerp(0, 2 * m, p); // Lowered Y on mobile
+            targetZ = THREE.MathUtils.lerp(-4 + zOff, -5 + zOff, p);
             targetScale = THREE.MathUtils.lerp(1.5 * m, 1.4 * m, p);
         } else if (progress < 5) {
             // Schedule: Move bottom right
             const p = progress - 4;
             targetX = THREE.MathUtils.lerp(-3 * m, 3 * m, p);
-            targetY = THREE.MathUtils.lerp(3 * m, -2 * m, p);
-            targetZ = THREE.MathUtils.lerp(-5, -6, p);
+            targetY = THREE.MathUtils.lerp(2 * m, -2 * m, p);
+            targetZ = THREE.MathUtils.lerp(-5 + zOff, -6 + zOff, p);
             targetScale = THREE.MathUtils.lerp(1.4 * m, 1.0 * m, p);
         } else {
             // Final CTA: Back to center, very large
             const p = Math.min((progress - 5) * 2, 1);
             targetX = THREE.MathUtils.lerp(3 * m, 0, p);
             targetY = THREE.MathUtils.lerp(-2 * m, 0, p);
-            targetZ = THREE.MathUtils.lerp(-6, -2, p);
+            targetZ = THREE.MathUtils.lerp(-6 + zOff, -2 + zOff, p);
             targetScale = THREE.MathUtils.lerp(1.0 * m, 2.5 * m, p);
         }
 
