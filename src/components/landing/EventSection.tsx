@@ -35,7 +35,7 @@ function QuoteRotator() {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 1.05 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="text-xs md:text-sm text-white/40 italic font-light tracking-[0.2em] uppercase"
+                    className="text-xs md:text-sm text-white/80 italic font-medium tracking-[0.2em] uppercase drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
                 >
                     "{QUOTES[index]}"
                 </motion.p>
@@ -90,7 +90,7 @@ export function EventSection({ onRegister }: EventSectionProps) {
                 <div className="mb-4">
                     <motion.span
                         variants={itemVariants}
-                        className="block text-xs md:text-sm uppercase tracking-[1em] text-white/30 font-medium translate-x-[0.5em] mb-4"
+                        className="block text-xs md:text-sm uppercase tracking-[1em] text-white/70 font-bold translate-x-[0.5em] mb-4"
                     >
                         Presented by SAIT
                     </motion.span>
@@ -108,18 +108,18 @@ export function EventSection({ onRegister }: EventSectionProps) {
                     style={{ scale: prizeScale, rotate: prizeRotate }}
                     className="relative inline-block mb-12 group"
                 >
-                    <div className="absolute -inset-8 bg-neon-magenta/20 blur-[120px] rounded-full group-hover:bg-neon-magenta/30 transition-all duration-700 animate-pulse" />
+                    <div className="absolute -inset-8 bg-purple-500/10 blur-[120px] rounded-full group-hover:bg-purple-500/20 transition-all duration-700 animate-pulse" />
                     <div className="relative flex flex-col items-center">
-                        <span className="text-[10rem] md:text-[20rem] font-black tracking-tighter chrome-text-holographic leading-none drop-shadow-[0_0_50px_rgba(255,0,255,0.5)]">
+                        <span className="text-[10rem] md:text-[20rem] font-black tracking-tighter chrome-text-holographic leading-none drop-shadow-[0_0_50px_rgba(192,132,252,0.5)]">
                             15K
                         </span>
                         <motion.div
                             initial={{ width: 0 }}
                             whileInView={{ width: "100%" }}
                             transition={{ duration: 1, delay: 1 }}
-                            className="h-[2px] bg-gradient-to-r from-transparent via-neon-magenta to-transparent mt-[-10px] md:mt-[-20px]"
+                            className="h-[2px] bg-gradient-to-r from-transparent via-purple-400/50 to-transparent mt-[-10px] md:mt-[-20px]"
                         />
-                        <span className="text-neon-magenta text-xl md:text-4xl font-black tracking-[0.4em] uppercase italic mt-4 drop-shadow-[0_0_15px_rgba(255,0,255,0.8)]">
+                        <span className="chrome-text-holographic text-xl md:text-4xl font-black tracking-[0.4em] uppercase italic mt-4 drop-shadow-[0_0_15px_rgba(192,132,252,0.4)]">
                             Total Prize Pool
                         </span>
                     </div>
@@ -131,11 +131,11 @@ export function EventSection({ onRegister }: EventSectionProps) {
                     className="flex flex-col items-center gap-6 mb-16"
                 >
                     <div className="flex flex-col md:flex-row items-baseline gap-4 md:gap-8">
-                        <span className="text-4xl md:text-7xl font-bold text-neon-blue tracking-tight uppercase">
+                        <span className="text-4xl md:text-7xl font-bold chrome-text-holographic tracking-tight uppercase px-2">
                             14 MARCH 2026
                         </span>
-                        <span className="hidden md:block text-5xl font-thin text-white/20">|</span>
-                        <span className="text-3xl md:text-5xl font-light text-white/80 tracking-widest uppercase">
+                        <span className="hidden md:block text-5xl font-thin text-white/10 px-2">|</span>
+                        <span className="text-3xl md:text-5xl font-light chrome-text-holographic tracking-widest uppercase px-2">
                             09:00 AM IST
                         </span>
                     </div>

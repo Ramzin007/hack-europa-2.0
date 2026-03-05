@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { GlassCard } from '../ui/GlassCard';
+import { ChromeButton } from '../ui/ChromeButton';
 
 export function AboutUsSection() {
     return (
@@ -11,11 +12,18 @@ export function AboutUsSection() {
                     viewport={{ once: true }}
                     transition={{ duration: 1 }}
                 >
-                    <GlassCard className="p-10 md:p-16 h-full flex flex-col justify-center border-neon-purple/20">
+                    <GlassCard className="p-10 md:p-16 h-full flex flex-col items-start border-neon-purple/20">
                         <h2 className="text-3xl md:text-5xl font-black text-white mb-8 tracking-tighter">ABOUT SAIT</h2>
-                        <p className="text-white/60 text-lg leading-relaxed font-light">
-                            Students' Association of Information Technology (SAIT) is a vibrant community dedicated to fostering innovation and technical excellence. We bridge the gap between academic learning and industry standards through workshops, hackathons, and collaborative projects.
+                        <p className="text-white/60 text-lg leading-relaxed font-light mb-10">
+                            Founded in 1995, the Department of Information Technology at Cochin University of Science and Technology is a dynamic hub of innovation. Our dedicated faculty explores user-centric interfaces, cybersecurity, and artificial intelligence, pushing the boundaries of IT. Committed to excellence, we provide a holistic education in cutting-edge technologies. The <span className="font-bold text-[#e2d5f8] drop-shadow-[0_0_10px_rgba(226,213,248,0.4)]">Student Association of IT (SAIT)</span> enhances student experience through workshops, magazines, and tech projects, fostering collaboration and creating a vibrant learning environment in the ever-evolving field of Information Technology.
                         </p>
+                        <ChromeButton
+                            onClick={() => window.open('https://sait-opal.vercel.app/', '_blank')}
+                            className="scale-90 origin-left"
+                            glowColor="purple"
+                        >
+                            VISIT OFFICIAL WEBSITE
+                        </ChromeButton>
                     </GlassCard>
                 </motion.div>
 

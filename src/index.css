@@ -81,19 +81,34 @@
     filter: drop-shadow(0 0 15px rgba(125, 211, 252, 0.4));
   }
 
-  .chrome-text-holographic {
+  .chrome-text-center-radiant {
     background: linear-gradient(90deg,
-        #ffffff 0%,
-        #ff00ff 25%,
-        #00e5ff 50%,
-        #b533ff 75%,
-        #ffffff 100%);
+        #c084fc 0%,
+        #e2d5f8 35%,
+        #ffffff 50%,
+        #e2d5f8 65%,
+        #c084fc 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     background-size: 200% auto;
-    animation: text-shimmer 12s linear infinite;
-    filter: drop-shadow(0 0 15px rgba(255, 0, 255, 0.4));
+    animation: text-shimmer 5s linear infinite;
+    filter: drop-shadow(0 0 15px rgba(226, 213, 248, 0.4));
+  }
+
+  .chrome-text-holographic {
+    background: linear-gradient(90deg,
+        #c084fc 0%,
+        #e2d5f8 25%,
+        #ffffff 50%,
+        #e2d5f8 75%,
+        #c084fc 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% auto;
+    animation: text-shimmer 8s linear infinite;
+    filter: drop-shadow(0 0 20px rgba(192, 132, 252, 0.5));
   }
 
   .chrome-text-custom {

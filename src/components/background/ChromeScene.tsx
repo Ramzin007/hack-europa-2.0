@@ -52,15 +52,22 @@ function SceneContent() {
             targetZ = THREE.MathUtils.lerp(-6, -4, p);
             targetScale = THREE.MathUtils.lerp(1.2 * m, 1.5 * m, p);
         } else if (progress < 4) {
-            // Schedule: Move bottom right
+            // Guidelines: Move to top left
             const p = progress - 3;
-            targetX = THREE.MathUtils.lerp(-4 * m, 3 * m, p);
-            targetY = THREE.MathUtils.lerp(0, -2 * m, p);
-            targetZ = THREE.MathUtils.lerp(-4, -6, p);
-            targetScale = THREE.MathUtils.lerp(1.5 * m, 1.0 * m, p);
+            targetX = THREE.MathUtils.lerp(-4 * m, -3 * m, p);
+            targetY = THREE.MathUtils.lerp(0, 3 * m, p);
+            targetZ = THREE.MathUtils.lerp(-4, -5, p);
+            targetScale = THREE.MathUtils.lerp(1.5 * m, 1.4 * m, p);
+        } else if (progress < 5) {
+            // Schedule: Move bottom right
+            const p = progress - 4;
+            targetX = THREE.MathUtils.lerp(-3 * m, 3 * m, p);
+            targetY = THREE.MathUtils.lerp(3 * m, -2 * m, p);
+            targetZ = THREE.MathUtils.lerp(-5, -6, p);
+            targetScale = THREE.MathUtils.lerp(1.4 * m, 1.0 * m, p);
         } else {
             // Final CTA: Back to center, very large
-            const p = Math.min((progress - 4) * 2, 1);
+            const p = Math.min((progress - 5) * 2, 1);
             targetX = THREE.MathUtils.lerp(3 * m, 0, p);
             targetY = THREE.MathUtils.lerp(-2 * m, 0, p);
             targetZ = THREE.MathUtils.lerp(-6, -2, p);
