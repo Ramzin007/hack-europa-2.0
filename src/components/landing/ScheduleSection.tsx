@@ -53,8 +53,10 @@ export function ScheduleSection() {
                 className="max-w-6xl mx-auto"
             >
                 <div className="text-center mb-20">
-                    <h2 className="text-4xl md:text-7xl font-black text-white mb-4 tracking-tighter">TIMELINE</h2>
-                    <div className="h-1 w-20 bg-neon-purple mx-auto" />
+                    <h2 className="text-4xl md:text-7xl font-black chrome-text-holographic tracking-tighter mb-4 shadow-neon-purple/20">
+                        TIMELINE
+                    </h2>
+                    <div className="h-1 w-24 bg-gradient-to-r from-neon-purple to-neon-magenta mx-auto rounded-full shadow-[0_0_15px_rgba(181,51,255,0.5)]" />
                 </div>
 
                 <div className="relative">
