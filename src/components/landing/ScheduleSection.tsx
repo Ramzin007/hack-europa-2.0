@@ -36,11 +36,11 @@ const ScheduleItem = memo(({ time, title, description, index }: ScheduleItemProp
 });
 
 const SCHEDULE_DATA = [
-    { time: "09:00 AM", title: "Registration & Kickoff", description: "Badge pickup and official hackathon start" },
+    { time: "08:00 AM", title: "Registration & Kickoff", description: "Badge pickup and official hackathon start" },
     { time: "12:00 PM", title: "Lunch Break", description: "Fuel up and recharge for the afternoon" },
     { time: "04:00 PM", title: "Final Submission", description: "Stop coding and submit your project to the platform" },
     { time: "04:00 PM - 05:30 PM", title: "Evaluation Round", description: "Jury review and project demonstrations" },
-    { time: "05:30 PM", title: "Winners Announcement", description: "Celebrating the top innovations and distributions" },
+    { time: "06:00 PM", title: "Winners Announcement", description: "Celebrating the top innovations and distributions" },
 ];
 
 export function ScheduleSection() {
