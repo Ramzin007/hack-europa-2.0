@@ -136,13 +136,9 @@ export function EventSection({ onRegister }: EventSectionProps) {
                     variants={itemVariants}
                     className="flex flex-col items-center gap-6 mb-16"
                 >
-                    <div className="flex flex-col md:flex-row items-baseline gap-4 md:gap-8">
-                        <span className="text-4xl md:text-7xl font-bold chrome-text-holographic tracking-tight uppercase px-2">
-                            14 MARCH 2026
-                        </span>
-                        <span className="hidden md:block text-5xl font-thin text-white/10 px-2">|</span>
-                        <span className="text-3xl md:text-5xl font-light chrome-text-holographic tracking-widest uppercase px-2">
-                            09:00 AM IST
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
+                        <span className="text-4xl md:text-7xl font-bold chrome-text-holographic tracking-tight uppercase px-2 text-center">
+                            14 MARCH 2026, 8:00 AM
                         </span>
                     </div>
 
