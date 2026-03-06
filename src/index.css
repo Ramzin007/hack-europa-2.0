@@ -61,7 +61,7 @@
     background-clip: text;
     color: transparent;
     background-size: 200% auto;
-    animation: text-shimmer 12s linear infinite;
+    animation: text-shimmer 4s linear infinite;
     /* premium soft glow - adjusted for cyan/emerald theme */
     filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.25));
   }
@@ -77,7 +77,7 @@
     background-clip: text;
     color: transparent;
     background-size: 200% auto;
-    animation: text-shimmer 12s linear infinite;
+    animation: text-shimmer 4s linear infinite;
     filter: drop-shadow(0 0 15px rgba(125, 211, 252, 0.4));
   }
 
@@ -92,7 +92,7 @@
     background-clip: text;
     color: transparent;
     background-size: 200% auto;
-    animation: text-shimmer 5s linear infinite;
+    animation: text-shimmer 3s linear infinite;
     filter: drop-shadow(0 0 15px rgba(226, 213, 248, 0.4));
   }
 
@@ -122,7 +122,7 @@
     background-clip: text;
     color: transparent;
     background-size: 200% auto;
-    animation: text-shimmer 12s linear infinite;
+    animation: text-shimmer 4s linear infinite;
     filter: drop-shadow(0 0 15px rgba(56, 189, 248, 0.4));
   }
 
@@ -144,7 +144,7 @@
     background-clip: text;
     color: transparent;
     background-size: 200% auto;
-    animation: text-shimmer 5s linear infinite;
+    animation: text-shimmer 3s linear infinite;
     filter: drop-shadow(0 0 15px rgba(255, 102, 179, 0.4));
   }
 
