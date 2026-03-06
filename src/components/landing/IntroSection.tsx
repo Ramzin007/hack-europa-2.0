@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring, type MotionValue } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import { ChromeButton } from '../ui/ChromeButton';
 import { cn } from '../../lib/utils';
