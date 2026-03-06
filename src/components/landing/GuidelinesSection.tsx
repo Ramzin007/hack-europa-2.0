@@ -62,8 +62,9 @@ export function GuidelinesSection() {
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false }}
                     transition={{ duration: 0.8 }}
+                    style={{ willChange: "transform, opacity" }}
                     className="text-center mb-20"
                 >
                     <h2 className="text-4xl md:text-7xl font-black chrome-text-holographic tracking-tighter mb-4 shadow-neon-purple/20">
@@ -76,7 +77,7 @@ export function GuidelinesSection() {
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true }}
+                    viewport={{ once: false }}
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
                 >
                     {guidelines.map((item, index) => {
@@ -90,6 +91,7 @@ export function GuidelinesSection() {
                                     borderColor: "rgba(168, 85, 247, 0.4)",
                                     boxShadow: "0 0 25px rgba(168, 85, 247, 0.4)"
                                 }}
+                                style={{ willChange: "transform, opacity, box-shadow" }}
                                 className="glass-card p-10 md:p-8 rounded-xl border border-purple-500/20 bg-white/5 backdrop-blur-md transition-all duration-300 flex flex-col items-start gap-4 group mx-auto md:mx-0 max-w-[90%] md:max-w-none"
                             >
                                 <div className="p-3 bg-purple-500/10 rounded-lg group-hover:bg-purple-500/20 transition-colors">

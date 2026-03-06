@@ -52,15 +52,15 @@ export function EventSection({ onRegister }: EventSectionProps) {
     });
 
     const smoothProgress = useSpring(scrollYProgress, {
-        stiffness: 100,
+        stiffness: 150,
         damping: 30,
         restDelta: 0.001
     });
 
-    const sectionOpacity = useTransform(smoothProgress, [0, 0.15], [0, 1]);
-    const sectionScale = useTransform(smoothProgress, [0, 0.15], [0.95, 1]);
-    const sectionBlur = useTransform(smoothProgress, [0, 0.15], ["blur(8px)", "blur(0px)"]);
-    const sectionY = useTransform(smoothProgress, [0, 0.15], [50, 0]);
+    const sectionOpacity = useTransform(smoothProgress, [0, 0.25], [0, 1]);
+    const sectionScale = useTransform(smoothProgress, [0, 0.25], [0.95, 1]);
+    const sectionBlur = useTransform(smoothProgress, [0, 0.25], ["blur(8px)", "blur(0px)"]);
+    const sectionY = useTransform(smoothProgress, [0, 0.25], [50, 0]);
 
     const prizeScale = useTransform(smoothProgress, [0.1, 0.4, 0.7], [0.8, 1.1, 0.8]);
     const prizeRotate = useTransform(smoothProgress, [0.1, 0.7], [-2, 2]);
@@ -95,7 +95,7 @@ export function EventSection({ onRegister }: EventSectionProps) {
                 }}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ margin: "-100px" }}
+                viewport={{ margin: "-100px", once: false }}
                 className="max-w-6xl w-full text-center z-10"
             >
                 {/* 1. Main Heading */}

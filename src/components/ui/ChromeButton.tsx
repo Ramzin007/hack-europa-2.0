@@ -47,10 +47,10 @@ export function ChromeButton({ children, className, glowColor = 'purple', ...pro
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className={cn(
-                "relative rounded-full px-10 py-5 font-bold tracking-[0.2em] font-sans overflow-hidden transition-all duration-150",
+                "relative rounded-full px-10 py-5 font-bold tracking-[0.2em] font-sans overflow-hidden",
                 "bg-gradient-to-br from-[#121216] to-[#0a0a0c] border border-white/20",
                 glowClass,
-                "group will-change-transform z-20 cursor-pointer block",
+                "group will-change-transform z-20 cursor-pointer block transition-[transform,box-shadow,opacity] duration-300",
                 className
             )}
             transition={{ duration: 0.15 }}

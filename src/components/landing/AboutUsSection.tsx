@@ -9,8 +9,9 @@ export function AboutUsSection() {
                 <motion.div
                     initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false }}
                     transition={{ duration: 1 }}
+                    style={{ willChange: "transform, opacity" }}
                 >
                     <GlassCard className="p-10 md:p-16 h-full flex flex-col items-start border-neon-purple/20">
                         <h2 className="text-3xl md:text-5xl font-black text-white mb-8 tracking-tighter">ABOUT SAIT</h2>
@@ -32,8 +33,9 @@ export function AboutUsSection() {
                 <motion.div
                     initial={{ opacity: 0, x: 30 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false }}
                     transition={{ duration: 1, delay: 0.2 }}
+                    style={{ willChange: "transform, opacity" }}
                 >
                     <GlassCard className="p-10 md:p-16 h-full flex flex-col justify-center border-neon-blue/20">
                         <h2 className="text-3xl md:text-5xl font-black text-white mb-8 tracking-tighter">ABOUT HACK EUROPA</h2>

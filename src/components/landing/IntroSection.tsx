@@ -183,7 +183,7 @@ export function IntroSection() {
                 />
 
                 {/* Explore Button */}
-                <div className="absolute bottom-32 md:bottom-16 left-1/2 -translate-x-1/2 z-30">
+                <div className="absolute bottom-16 left-1/2 -translate-x-1/2 z-30">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}

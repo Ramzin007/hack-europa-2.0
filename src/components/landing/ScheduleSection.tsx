@@ -15,8 +15,9 @@ const ScheduleItem = memo(({ time, title, description, index }: ScheduleItemProp
         <motion.div
             initial={{ opacity: 0, x: isEven ? -50 : 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-10%" }}
+            viewport={{ once: false, margin: "-10%" }}
             transition={{ duration: 0.8, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+            style={{ willChange: "transform, opacity" }}
             className={`flex w-full mb-12 flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center`}
         >
             <div className={`w-full md:w-1/2 flex ${isEven ? 'md:justify-end' : 'md:justify-start'} px-4 md:px-12`}>
@@ -28,7 +29,13 @@ const ScheduleItem = memo(({ time, title, description, index }: ScheduleItemProp
             </div>
 
             {/* Center Node on desktop */}
-            <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-neon-purple rounded-full shadow-[0_0_15px_rgba(181,51,255,0.8)] z-10" />
+            <motion.div
+                initial={{ scale: 0, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: false }}
+                transition={{ delay: index * 0.1 + 0.3, duration: 0.5, ease: "backOut" }}
+                className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-neon-purple rounded-full shadow-[0_0_15px_rgba(181,51,255,0.8)] z-10"
+            />
 
             <div className="w-full md:w-1/2" />
         </motion.div>
@@ -49,7 +56,7 @@ export function ScheduleSection() {
             <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
+                viewport={{ once: false, margin: "-5%" }}
                 className="max-w-6xl mx-auto"
             >
                 <div className="text-center mb-20">
