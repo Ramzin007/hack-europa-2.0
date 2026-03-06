@@ -170,7 +170,7 @@ export function IntroSection() {
                     >
                         <ChromeButton
                             onClick={handleExplore}
-                            glowColor="blue"
+                            glowColor="purple"
                             className="scale-90 md:scale-100 hover:shadow-[0_0_40px_rgba(14,165,233,0.4)]"
                         >
                             EXPLORE
