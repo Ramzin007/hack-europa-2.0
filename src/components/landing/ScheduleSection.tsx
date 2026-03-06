@@ -18,7 +18,7 @@ const ScheduleItem = memo(({ time, title, description, index }: ScheduleItemProp
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: false, margin: "-10%" }}
             transition={{ duration: 0.8, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className={`flex w-full mb-16 flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center relative gap-8 md:gap-0`}
+            className={`flex w-full mb-8 md:mb-16 flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center relative gap-4 md:gap-0`}
         >
             <div className={`w-full md:w-1/2 flex ${isEven ? 'md:justify-end' : 'md:justify-start'} px-4 md:px-16`}>
                 <GlassCard className="p-8 w-full max-w-md group relative border-white/5 hover:border-sky-400/30 transition-all duration-500">
@@ -75,12 +75,12 @@ const SCHEDULE_DATA = [
 
 export function ScheduleSection() {
     return (
-        <section className="py-32 px-6 relative overflow-hidden bg-black/50">
+        <section className="py-16 md:py-32 px-6 relative overflow-hidden bg-black/50">
             {/* Background scanline effect for this section */}
             <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%]" />
 
             <div className="max-w-6xl mx-auto relative">
-                <div className="text-center mb-32 relative">
+                <div className="text-center mb-16 md:mb-32 relative">
                     <motion.div
                         initial={{ opacity: 0, y: -20 }}
                         whileInView={{ opacity: 1, y: 0 }}
