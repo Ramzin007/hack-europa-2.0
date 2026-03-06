@@ -17,7 +17,7 @@ export function FinalCTASection({ onRegister }: FinalCTASectionProps) {
             >
                 <h2 className="text-5xl md:text-8xl font-black text-white mb-12 tracking-tighter uppercase">
                     HACK EUROPA 2.0 <br />
-                    <span className="chrome-text">AWAITS</span>
+                    <span className="chrome-text-center-radiant">AWAITS</span>
                 </h2>
 
                 <div className="flex flex-col items-center gap-8">
