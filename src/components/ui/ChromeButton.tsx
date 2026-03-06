@@ -38,6 +38,12 @@ export function ChromeButton({ children, className, glowColor = 'purple', ...pro
         blue: 'shadow-[0_0_30px_rgba(2,62,138,0.5)]',
     }[glowColor];
 
+    const textColorClass = {
+        purple: 'chrome-text-holographic',
+        magenta: 'chrome-text-magenta-radiant',
+        blue: 'chrome-text-custom',
+    }[glowColor];
+
     return (
         <motion.button
             ref={buttonRef}
@@ -56,7 +62,10 @@ export function ChromeButton({ children, className, glowColor = 'purple', ...pro
             transition={{ duration: 0.15 }}
             {...props}
         >
-            <span className="relative z-10 chrome-text text-lg group-hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.9)] transition-all duration-150">
+            <span className={cn(
+                "relative z-10 text-lg group-hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.9)] transition-all duration-150",
+                textColorClass
+            )}>
                 {children}
             </span>
 

@@ -133,6 +133,21 @@
     background-clip: content-box, border-box;
   }
 
+  .chrome-text-magenta-radiant {
+    background: linear-gradient(90deg,
+        #ff0084 0%,
+        #ff66b3 35%,
+        #ffffff 50%,
+        #ff66b3 65%,
+        #ff0084 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% auto;
+    animation: text-shimmer 5s linear infinite;
+    filter: drop-shadow(0 0 15px rgba(255, 102, 179, 0.4));
+  }
+
   .glass-card {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
