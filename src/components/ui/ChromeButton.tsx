@@ -56,14 +56,19 @@ export function ChromeButton({ children, className, glowColor = 'purple', ...pro
                 "relative rounded-full px-10 py-5 font-bold tracking-[0.2em] font-sans overflow-hidden",
                 "bg-gradient-to-br from-[#121216] to-[#0a0a0c] border border-white/20",
                 glowClass,
-                "group will-change-transform z-20 cursor-pointer block transition-[transform,box-shadow,opacity] duration-150",
+                "group will-change-transform z-20 cursor-pointer block transition-[box-shadow,opacity]",
                 className
             )}
-            transition={{ duration: 0.1 }}
+            transition={{ 
+                type: "spring", 
+                stiffness: 800, 
+                damping: 35,
+                mass: 0.5
+            }}
             {...props}
         >
             <span className={cn(
-                "relative z-10 text-lg group-hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.9)] transition-all duration-100",
+                "relative z-10 text-lg group-hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.9)] transition-all",
                 textColorClass
             )}>
                 {children}
