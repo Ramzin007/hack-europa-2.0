@@ -107,7 +107,7 @@
     background-clip: text;
     color: transparent;
     background-size: 200% auto;
-    animation: text-shimmer 8s linear infinite;
+    animation: text-shimmer 4s linear infinite;
     filter: drop-shadow(0 0 20px rgba(192, 132, 252, 0.5));
   }
 
