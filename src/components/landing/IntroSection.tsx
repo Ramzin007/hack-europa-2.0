@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform, useSpring, type MotionValue } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring, type MotionValue, AnimatePresence } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import { ChromeButton } from '../ui/ChromeButton';
 import { cn } from '../../lib/utils';
@@ -13,7 +13,7 @@ function FallingLetter({ char, progress, index, className }: { char: string, pro
                 opacity: letterOpacity,
                 display: 'inline-block'
             }}
-            className={cn("text-[clamp(3.5rem,15vw,9rem)] font-black leading-none tracking-tighter", className || "chrome-text-center-radiant")}
+            className={cn("text-[clamp(3.5rem,15vw,9rem)] font-black leading-none tracking-[-0.07em]", className || "chrome-text-center-radiant")}
         >
             {char}
         </motion.span>
@@ -161,21 +161,46 @@ export function IntroSection() {
                     className="absolute bottom-[-2px] left-0 right-0 h-[70vh] bg-gradient-to-t from-sky-400/30 to-transparent pointer-events-none"
                 />
 
-                {/* Explore Button */}
-                <div className="absolute bottom-36 md:bottom-16 left-1/2 -translate-x-1/2 z-30">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.8, duration: 0.6 }}
-                    >
-                        <ChromeButton
-                            onClick={handleExplore}
-                            glowColor="purple"
-                            className="scale-90 md:scale-100 hover:shadow-[0_0_40px_rgba(181,51,255,0.4)]"
-                        >
-                            EXPLORE
-                        </ChromeButton>
-                    </motion.div>
+                {/* Explore Button / Scroll Indicator */}
+                <div className="absolute bottom-36 md:bottom-20 left-1/2 -translate-x-1/2 z-50">
+                    <AnimatePresence mode="wait">
+                        {!isUnlocked ? (
+                            <motion.div
+                                key="explore-btn"
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -20 }}
+                                transition={{ delay: 0.8, duration: 0.6 }}
+                            >
+                                <ChromeButton
+                                    onClick={handleExplore}
+                                    glowColor="purple"
+                                    className="scale-90 md:scale-100 hover:shadow-[0_0_40px_rgba(181,51,255,0.4)]"
+                                >
+                                    EXPLORE
+                                </ChromeButton>
+                            </motion.div>
+                        ) : (
+                            <motion.div
+                                key="scroll-indicator"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 1 }}
+                                className="flex flex-col items-center gap-4"
+                            >
+                                <span className="text-[10px] md:text-xs uppercase tracking-[0.5em] text-white/70 font-bold whitespace-nowrap drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">
+                                    Scroll to Begin
+                                </span>
+                                <div className="w-[1px] h-20 bg-gradient-to-b from-white/80 via-white/20 to-transparent relative overflow-hidden">
+                                    <motion.div
+                                        animate={{ y: [-40, 80] }}
+                                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                                        className="absolute top-0 left-0 w-full h-10 bg-sky-400 shadow-[0_0_15px_rgba(56,189,248,0.6)]"
+                                    />
+                                </div>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
                 </div>
             </div>
         </section>

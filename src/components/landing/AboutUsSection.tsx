@@ -4,54 +4,56 @@ import { ChromeButton } from '../ui/ChromeButton';
 
 export function AboutUsSection() {
     return (
-        <section className="min-h-screen py-20 px-6 flex items-center">
-            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <motion.div
-                    initial={{ opacity: 0, x: -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: false }}
-                    transition={{ duration: 1 }}
-                    style={{ willChange: "transform, opacity" }}
-                >
-                    <GlassCard className="p-10 md:p-16 h-full flex flex-col items-start border-neon-purple/20">
-                        <h2 className="text-3xl md:text-5xl font-black text-white mb-8 tracking-tighter">ABOUT SAIT</h2>
-                        <p className="text-white/90 text-lg leading-relaxed font-normal mb-10">
-                            Founded in 1995, the Department of Information Technology at Cochin University of Science and Technology is a dynamic hub of innovation. Our dedicated faculty explores user-centric interfaces, cybersecurity, and artificial intelligence, pushing the boundaries of IT. Committed to excellence, we provide a holistic education in cutting-edge technologies. The <span className="font-bold text-[#e2d5f8] drop-shadow-[0_0_10px_rgba(226,213,248,0.4)]">Student Association of IT (SAIT)</span> enhances student experience through workshops, magazines, and tech projects, fostering collaboration and creating a vibrant learning environment in the ever-evolving field of Information Technology.
-                        </p>
-                        <div className="w-full flex justify-center md:justify-start">
-                            <ChromeButton
-                                onClick={() => window.open('https://sait-opal.vercel.app/', '_blank')}
-                                className="scale-90 origin-center md:origin-left"
-                                glowColor="purple"
-                            >
-                                VISIT SAIT
-                            </ChromeButton>
-                        </div>
-                    </GlassCard>
-                </motion.div>
+        <section className="min-h-screen py-32 px-6 flex items-center relative overflow-hidden">
+            <div className="max-w-6xl mx-auto relative z-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+                    >
+                        <GlassCard className="p-10 md:p-16 h-full flex flex-col items-start border-white/5 hover:border-sky-400/20 transition-all duration-500">
+                            <h3 className="text-2xl md:text-4xl font-black text-white mb-8 tracking-tighter uppercase">ABOUT SAIT</h3>
+                            <div className="text-white/80 text-lg leading-relaxed font-normal mb-10">
+                                <p className="mb-6">
+                                    Founded in 1995, the Department of IT at CUSAT is a dynamic hub of innovation. We provide holistic education in cutting-edge technologies, fostering a vibrant learning environment for future leaders.
+                                </p>
+                                <p>
+                                    The <span className="font-bold text-sky-300">Student Association of IT (SAIT)</span> enhances student experience through workshops and projects, fostering collaboration in the ever-evolving field of IT.
+                                </p>
+                            </div>
+                            <div className="mt-auto">
+                                <ChromeButton
+                                    onClick={() => window.open('https://sait-opal.vercel.app/', '_blank')}
+                                    glowColor="purple"
+                                    className="scale-90"
+                                >
+                                    EXPLORE SAIT
+                                </ChromeButton>
+                            </div>
+                        </GlassCard>
+                    </motion.div>
 
-                <motion.div
-                    initial={{ opacity: 0, x: 30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: false }}
-                    transition={{ duration: 1, delay: 0.2 }}
-                    style={{ willChange: "transform, opacity" }}
-                >
-                    <GlassCard className="p-10 md:p-16 h-full flex flex-col justify-center border-neon-blue/20">
-                        <h2 className="text-3xl md:text-5xl font-black text-white mb-8 tracking-tighter">ABOUT HACK EUROPA</h2>
-                        <div className="text-white/90 text-lg leading-relaxed font-normal">
-                            <p className="mb-6">
-                                Hack Europa is an annual hackathon organized by the Students Association of Information Technology at the School of Engineering, CUSAT. It provides a platform for students to collaborate, innovate, and build technology-driven solutions to real-world problems.
-                            </p>
-                            <p className="mb-6">
-                                Since its inception in 2025, Hack Europa has grown into a recognized event that brings together passionate developers, designers, and problem solvers.
-                            </p>
-                            <p>
-                                This year, Hack Europa 2.0 expands its reach by inviting students from all disciplines and colleges, encouraging interdisciplinary collaboration and diverse ideas.
-                            </p>
-                        </div>
-                    </GlassCard>
-                </motion.div>
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                    >
+                        <GlassCard className="p-10 md:p-16 h-full flex flex-col border-white/5 hover:border-sky-400/20 transition-all duration-500">
+                            <h3 className="text-2xl md:text-4xl font-black text-white mb-8 tracking-tighter uppercase">ABOUT EUROPA</h3>
+                            <div className="text-white/80 text-lg leading-relaxed font-normal">
+                                <p className="mb-6">
+                                    Hack Europa is our flagship annual hackathon providing a platform for students to collaborate and build solutions. It brings together passionate developers to solve real-world problems.
+                                </p>
+                                <p>
+                                    This year, <span className="text-sky-300 font-bold">Hack Europa 2.0</span> expands its reach inviting students from all disciplines, encouraging interdisciplinary collaboration and diverse ideas.
+                                </p>
+                            </div>
+                        </GlassCard>
+                    </motion.div>
+                </div>
             </div>
         </section>
     );
