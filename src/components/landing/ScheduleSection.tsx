@@ -24,7 +24,7 @@ const ScheduleItem = memo(({ time, title, description, index }: ScheduleItemProp
                 <div className="glass-card p-6 rounded-2xl border border-white/10 w-full max-w-sm hover:border-neon-purple/50 transition-colors duration-500">
                     <span className="text-neon-blue font-mono text-sm tracking-widest mb-2 block">{time}</span>
                     <h3 className="text-xl font-bold text-white mb-2 uppercase tracking-tight">{title}</h3>
-                    {description && <p className="text-white/40 text-sm leading-relaxed">{description}</p>}
+                    {description && <p className="text-white/70 text-sm leading-relaxed">{description}</p>}
                 </div>
             </div>
 

@@ -27,7 +27,7 @@ const TimeUnit = memo(({ value, label }: { value: number, label: string }) => {
                     </motion.span>
                 </AnimatePresence>
             </div>
-            <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-500 mt-2">{label}</span>
+            <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-400 mt-2">{label}</span>
         </div>
     );
 });

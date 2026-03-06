@@ -100,7 +100,7 @@ export function GuidelinesSection() {
                                 <h3 className="text-xl font-bold text-white tracking-tight uppercase">
                                     {item.title}
                                 </h3>
-                                <p className="text-white/60 leading-relaxed font-light">
+                                <p className="text-white/85 leading-relaxed font-normal">
                                     {item.text}
                                 </p>
                             </motion.div>

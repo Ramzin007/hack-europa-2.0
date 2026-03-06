@@ -27,7 +27,7 @@ export function FinalCTASection({ onRegister }: FinalCTASectionProps) {
                     >
                         REGISTER NOW
                     </ChromeButton>
-                    <p className="text-white/30 uppercase tracking-[0.5em] text-xs font-medium animate-pulse">
+                    <p className="text-white/60 uppercase tracking-[0.5em] text-xs font-medium animate-pulse">
                         Step into the future
                     </p>
                 </div>

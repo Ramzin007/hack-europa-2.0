@@ -15,7 +15,7 @@ export function AboutUsSection() {
                 >
                     <GlassCard className="p-10 md:p-16 h-full flex flex-col items-start border-neon-purple/20">
                         <h2 className="text-3xl md:text-5xl font-black text-white mb-8 tracking-tighter">ABOUT SAIT</h2>
-                        <p className="text-white/60 text-lg leading-relaxed font-light mb-10">
+                        <p className="text-white/90 text-lg leading-relaxed font-normal mb-10">
                             Founded in 1995, the Department of Information Technology at Cochin University of Science and Technology is a dynamic hub of innovation. Our dedicated faculty explores user-centric interfaces, cybersecurity, and artificial intelligence, pushing the boundaries of IT. Committed to excellence, we provide a holistic education in cutting-edge technologies. The <span className="font-bold text-[#e2d5f8] drop-shadow-[0_0_10px_rgba(226,213,248,0.4)]">Student Association of IT (SAIT)</span> enhances student experience through workshops, magazines, and tech projects, fostering collaboration and creating a vibrant learning environment in the ever-evolving field of Information Technology.
                         </p>
                         <div className="w-full flex justify-center md:justify-start">
@@ -39,7 +39,7 @@ export function AboutUsSection() {
                 >
                     <GlassCard className="p-10 md:p-16 h-full flex flex-col justify-center border-neon-blue/20">
                         <h2 className="text-3xl md:text-5xl font-black text-white mb-8 tracking-tighter">ABOUT HACK EUROPA</h2>
-                        <div className="text-white/60 text-lg leading-relaxed font-light">
+                        <div className="text-white/90 text-lg leading-relaxed font-normal">
                             <p className="mb-6">
                                 Hack Europa is an annual hackathon organized by the Students Association of Information Technology at the School of Engineering, CUSAT. It provides a platform for students to collaborate, innovate, and build technology-driven solutions to real-world problems.
                             </p>

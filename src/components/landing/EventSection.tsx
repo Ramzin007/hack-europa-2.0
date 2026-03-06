@@ -35,7 +35,7 @@ function QuoteRotator() {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 1.05 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="text-xs md:text-sm text-white/80 italic font-medium tracking-[0.2em] uppercase drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
+                    className="text-xs md:text-sm text-white/95 italic font-medium tracking-[0.2em] uppercase drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
                 >
                     "{QUOTES[index]}"
                 </motion.p>
@@ -102,7 +102,7 @@ export function EventSection({ onRegister }: EventSectionProps) {
                 <div className="mb-4">
                     <motion.span
                         variants={itemVariants}
-                        className="block text-xs md:text-sm uppercase tracking-[1em] text-white/70 font-bold translate-x-[0.5em] mb-4"
+                        className="block text-xs md:text-sm uppercase tracking-[1em] text-white/95 font-bold translate-x-[0.5em] mb-4"
                     >
                         Presented by SAIT
                     </motion.span>
@@ -178,7 +178,7 @@ export function EventSection({ onRegister }: EventSectionProps) {
                         whileHover={{ y: -5, scale: 1.05 }}
                         className="group flex flex-col items-center gap-3 no-underline"
                     >
-                        <span className="text-xs text-white/40 uppercase tracking-[0.5em] font-bold group-hover:text-neon-blue transition-colors">
+                        <span className="text-xs text-white/65 uppercase tracking-[0.5em] font-bold group-hover:text-neon-blue transition-colors">
                             BATTLEGROUND LOCATION
                         </span>
                         <div className="flex items-center gap-4 border-b border-white/10 pb-2 group-hover:border-neon-blue/50 transition-all">
