@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform, useSpring, useMotionValue, useMotionValueEvent, MotionValue } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import { ChromeButton } from '../ui/ChromeButton';
 import { cn } from '../../lib/utils';
@@ -60,33 +60,12 @@ export function IntroSection() {
         restDelta: 0.001
     });
 
-    // Portal Progress handles asymmetrical timing
-    const portalProgress = useMotionValue(0);
-    const lastScrollY = useRef(0);
-
-    useMotionValueEvent(smoothProgress, "change", (latest) => {
-        const direction = latest > lastScrollY.current ? "down" : "up";
-        lastScrollY.current = latest;
-
-        // ASYMMETRICAL LOGIC:
-        // Forward (down): Finish by 0.3
-        // Reverse (up): Start back at 0.5 (half display)
-        if (direction === "down") {
-            // Map 0 -> 0.3 to 0 -> 1
-            const p = Math.min(1, latest / 0.3);
-            portalProgress.set(p);
-        } else {
-            // Map 0 -> 0.5 to 0 -> 1 (slower return)
-            const p = Math.min(1, latest / 0.5);
-            portalProgress.set(p);
-        }
-    });
-
-    const opacity = useTransform(portalProgress, [0, 1], [1, 0]);
-    const bgOpacity = useTransform(portalProgress, [0, 0.8], [0.7, 0]);
-    const bgScale = useTransform(portalProgress, [0, 1], [1, 5]);
-    const mainScale = useTransform(portalProgress, [0, 1], [1, 1.15]);
-    const mainY = useTransform(portalProgress, [0, 1], [0, -100]);
+    const opacity = useTransform(smoothProgress, [0.4, 0.9], [1, 0]);
+    const bgOpacity = useTransform(smoothProgress, [0.2, 0.8], [1, 0]);
+    const bgScale = useTransform(smoothProgress, [0, 1], [1, 2.5]);
+    const mainScale = useTransform(smoothProgress, [0, 1], [1, 1.1]);
+    const mainY = useTransform(smoothProgress, [0, 1], [0, -60]);
+    const blurEffect = useTransform(smoothProgress, [0.4, 0.9], ["blur(0px)", "blur(12px)"]);
 
     return (
         <section
@@ -99,7 +78,7 @@ export function IntroSection() {
                     style={{
                         opacity: bgOpacity,
                         scale: bgScale,
-                        filter: useTransform(portalProgress, [0.4, 1], ["blur(0px)", "blur(12px)"]),
+                        filter: blurEffect,
                         willChange: "transform, opacity, filter"
                     }}
                     className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 -translate-y-20 md:translate-y-0"
@@ -141,7 +120,7 @@ export function IntroSection() {
                         opacity,
                         scale: mainScale,
                         y: mainY,
-                        filter: useTransform(portalProgress, [0, 1], ["blur(0px)", "blur(10px)"]),
+                        filter: blurEffect,
                         willChange: "transform, opacity, filter"
                     }}
                     className="relative flex flex-col items-center text-center z-10 px-4 -translate-y-20 md:translate-y-0"
@@ -164,12 +143,12 @@ export function IntroSection() {
                         <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 overflow-visible mb-4">
                             <div className="flex gap-2 md:gap-4">
                                 {"HACK".split("").map((char, i) => (
-                                    <FallingLetter key={`h-${i}`} char={char} progress={scrollYProgress} index={i} className="chrome-text-center-radiant" />
+                                    <FallingLetter key={`h-${i}`} char={char} progress={smoothProgress} index={i} className="chrome-text-center-radiant" />
                                 ))}
                             </div>
                             <div className="flex gap-2 md:gap-4">
                                 {"EUROPA".split("").map((char, i) => (
-                                    <FallingLetter key={`e-${i}`} char={char} progress={scrollYProgress} index={i + 4} className="chrome-text-center-radiant" />
+                                    <FallingLetter key={`e-${i}`} char={char} progress={smoothProgress} index={i + 4} className="chrome-text-center-radiant" />
                                 ))}
                             </div>
                         </div>
@@ -178,7 +157,7 @@ export function IntroSection() {
 
                 {/* Atmospheric Floor Glow - Mixing into S2 */}
                 <motion.div
-                    style={{ opacity: useTransform(portalProgress, [0, 0.5, 1], [1, 1, 0.8]) }}
+                    style={{ opacity: useTransform(smoothProgress, [0.4, 1], [1, 0.4]) }}
                     className="absolute bottom-[-2px] left-0 right-0 h-[70vh] bg-gradient-to-t from-sky-400/30 to-transparent pointer-events-none"
                 />
 
