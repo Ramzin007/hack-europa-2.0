@@ -102,7 +102,7 @@ export function IntroSection() {
                         filter: useTransform(portalProgress, [0.4, 1], ["blur(0px)", "blur(12px)"]),
                         willChange: "transform, opacity, filter"
                     }}
-                    className="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
+                    className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 -translate-y-20 md:translate-y-0"
                 >
                     <div className="relative flex items-center justify-center">
                         {/* 1. Frosted Glass Body */}
@@ -144,7 +144,7 @@ export function IntroSection() {
                         filter: useTransform(portalProgress, [0, 1], ["blur(0px)", "blur(10px)"]),
                         willChange: "transform, opacity, filter"
                     }}
-                    className="relative flex flex-col items-center text-center z-10 px-4"
+                    className="relative flex flex-col items-center text-center z-10 px-4 -translate-y-20 md:translate-y-0"
                 >
                     {/* Premium Badge */}
                     <motion.div
