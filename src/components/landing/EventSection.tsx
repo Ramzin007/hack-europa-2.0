@@ -144,7 +144,7 @@ export function EventSection({ onRegister }: EventSectionProps) {
                 >
                     <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
                         <span className="text-4xl md:text-7xl font-bold chrome-text-holographic tracking-tight uppercase px-2 text-center">
-                            14 MARCH 2026, 8:00 AM
+                            14 MARCH 2026
                         </span>
                     </div>
 
