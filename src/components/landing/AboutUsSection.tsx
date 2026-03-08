@@ -86,15 +86,15 @@ export function AboutAndMemorialSection() {
                         viewport={{ once: true }}
                         transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
                     >
-                        <GlassCard className="p-8 md:p-12 h-full border-white/10 hover:border-sky-400/30 transition-all duration-500 bg-black/60 backdrop-blur-xl flex flex-col justify-center">
+                        <GlassCard className="p-8 md:p-12 h-full border-white/10 hover:border-sky-400/30 transition-all duration-500 bg-black/40 flex flex-col justify-center">
                             <div className="mb-6">
                                 <span className="text-sky-400 font-mono text-sm tracking-[0.6em] uppercase mb-4 block opacity-80">In Memoriam</span>
-                                <h2 className="text-5xl font-black text-white tracking-tighter uppercase mb-6 leading-none">
+                                <h2 className="text-xl md:text-3xl font-black text-white tracking-tighter uppercase mb-4 leading-none">
                                     IN MEMORY OF <br />
-                                    <span className="chrome-text-center-radiant text-7xl">ABHIJIT MENON</span>
+                                    <span className="chrome-text-center-radiant text-2xl md:text-5xl">ABHIJIT MENON</span>
                                 </h2>
                             </div>
-                            <div className="text-white/90 text-xl leading-relaxed font-light text-left">
+                            <div className="text-white/80 text-base md:text-lg leading-relaxed font-normal text-left">
                                 <p>
                                     Abhijit Menon was a visionary IT student of SOE, known for his passion for science, technology, and original ideas. He inspired those around him to think creatively and approach problems in unconventional ways. His curiosity and enthusiasm for learning pushed him to constantly explore new ideas and challenge boundaries. Though he is no longer with us, his spirit of innovation and love for knowledge will continue to inspire future generations.
                                 </p>
