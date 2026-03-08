@@ -39,13 +39,13 @@ export function MemorialSection() {
                     >
                         <GlassCard className="p-6 md:p-14 border-white/10 hover:border-sky-400/30 transition-all duration-500 bg-black/60 backdrop-blur-xl">
                             <div className="mb-4 md:mb-8">
-                                <span className="text-sky-400 font-mono text-[10px] md:text-sm tracking-[0.6em] uppercase mb-2 md:mb-4 block opacity-80">In Memoriam</span>
-                                <h2 className="text-2xl md:text-5xl font-black text-white tracking-tighter uppercase mb-4 md:mb-8 leading-none">
+                                <span className="text-sky-400 font-mono text-sm tracking-[0.6em] uppercase mb-2 md:mb-4 block opacity-80">In Memoriam</span>
+                                <h2 className="text-5xl font-black text-white tracking-tighter uppercase mb-4 md:mb-8 leading-none">
                                     IN MEMORY OF <br />
-                                    <span className="chrome-text-center-radiant text-3xl md:text-7xl">ABHIJIT MENON</span>
+                                    <span className="chrome-text-center-radiant text-7xl">ABHIJIT MENON</span>
                                 </h2>
                             </div>
-                            <div className="text-white/90 text-sm md:text-xl leading-relaxed font-light text-left">
+                            <div className="text-white/90 text-xl leading-relaxed font-light text-left">
                                 <p>
                                     Abhijit Menon was a visionary IT student of SOE, known for his passion for science, technology, and original ideas. He inspired those around him to think creatively and approach problems in unconventional ways. His curiosity and enthusiasm for learning pushed him to constantly explore new ideas and challenge boundaries. Though he is no longer with us, his spirit of innovation and love for knowledge will continue to inspire future generations.
                                 </p>
