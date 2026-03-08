@@ -6,6 +6,7 @@ import { EventSection } from './components/landing/EventSection';
 import { AboutUsSection } from './components/landing/AboutUsSection';
 import { ScheduleSection } from './components/landing/ScheduleSection';
 import { GuidelinesSection } from './components/landing/GuidelinesSection';
+import { MemorialSection } from './components/landing/MemorialSection';
 import { FinalCTASection } from './components/landing/FinalCTASection';
 import { RegistrationView } from './components/registration/RegistrationView';
 
@@ -19,6 +20,7 @@ const LandingPage = memo(({ onRegister }: { onRegister: () => void }) => {
       <AboutUsSection />
       <GuidelinesSection />
       <ScheduleSection />
+      <MemorialSection />
       <FinalCTASection onRegister={onRegister} />
     </div>
   );
