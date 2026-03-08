@@ -35,11 +35,11 @@ const ScheduleItem = memo(({ time, title, description, index }: ScheduleItemProp
                             </span>
                             <div className="h-[1px] flex-grow bg-white/5 group-hover:bg-sky-400/20 transition-colors" />
                         </div>
-                        
+
                         <h3 className="text-2xl font-black text-white uppercase tracking-tight group-hover:text-sky-300 transition-colors">
                             {title}
                         </h3>
-                        
+
                         {description && (
                             <p className="text-white/60 text-sm leading-relaxed font-normal border-l-2 border-white/5 pl-4 group-hover:border-sky-400/20 transition-colors">
                                 {description}
@@ -71,7 +71,7 @@ const SCHEDULE_DATA = [
     { time: "12:00 PM", title: "CHECKPOINT_02", description: "Checkpoint 2: Prototyping and development." },
     { time: "01:00 PM", title: "LUNCH_BREAK", description: "Refueling session: Lunch break." },
     { time: "04:30 PM", title: "CHECKPOINT_03", description: "Checkpoint 3: Final submission of projects." },
-    { time: "05:30 PM", title: "FINAL_PRESENTATION", description: "Final presentation of selected teams." },
+    { time: "05:30 PM", title: "FINAL_DEMO", description: "Final presentation of selected teams." },
     { time: "06:00 PM", title: "THE_TERMINUS", description: "End of the hackathon event." },
 ];
 
