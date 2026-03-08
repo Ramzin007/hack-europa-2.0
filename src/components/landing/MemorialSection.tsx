@@ -16,11 +16,15 @@ export function MemorialSection() {
                     >
                         <div className="absolute -inset-1 bg-gradient-to-r from-sky-500/20 to-purple-500/20 rounded-2xl blur-xl opacity-50 group-hover:opacity-100 transition duration-1000"></div>
                         <div className="relative aspect-[16/9] md:aspect-[4/5] overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
-                            <img 
-                                src="/abhijit.jpg" 
-                                alt="Abhijit Menon – IT Student of SOE"
-                                className="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-700"
-                            />
+                            <picture>
+                                <source media="(max-width: 767px)" srcSet="/abhijit-mobile.jpg" />
+                                <source media="(min-width: 768px)" srcSet="/abhijit.jpg" />
+                                <img
+                                    src="/abhijit.jpg"
+                                    alt="Abhijit Menon – IT Student of SOE"
+                                    className="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-700"
+                                />
+                            </picture>
                             {/* Scanning line effect */}
                             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-sky-400/5 to-transparent h-1/2 w-full -translate-y-full animate-[scan_4s_linear_infinite] pointer-events-none" />
                         </div>
