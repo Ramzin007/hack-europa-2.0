@@ -37,23 +37,17 @@ export function MemorialSection() {
                         viewport={{ once: true, margin: "-10%" }}
                         transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
                     >
-                        <GlassCard className="p-5 md:p-14 border-white/5 hover:border-sky-400/20 transition-all duration-500">
-                            <div className="mb-3 md:mb-6">
-                                <span className="text-sky-400 font-mono text-[9px] md:text-xs tracking-[0.5em] uppercase mb-1 md:mb-4 block">In Memoriam</span>
-                                <h2 className="text-xl md:text-5xl font-black text-white tracking-tighter uppercase mb-3 md:mb-6 leading-none">
+                        <GlassCard className="p-6 md:p-14 border-white/10 hover:border-sky-400/30 transition-all duration-500 bg-black/60 backdrop-blur-xl">
+                            <div className="mb-4 md:mb-8">
+                                <span className="text-sky-400 font-mono text-[10px] md:text-sm tracking-[0.6em] uppercase mb-2 md:mb-4 block opacity-80">In Memoriam</span>
+                                <h2 className="text-2xl md:text-5xl font-black text-white tracking-tighter uppercase mb-4 md:mb-8 leading-none">
                                     IN MEMORY OF <br />
-                                    <span className="chrome-text-center-radiant text-2xl md:text-6xl">ABHIJIT MENON</span>
+                                    <span className="chrome-text-center-radiant text-3xl md:text-7xl">ABHIJIT MENON</span>
                                 </h2>
                             </div>
-                            <div className="space-y-3 md:space-y-6 text-white/70 text-xs md:text-lg leading-relaxed font-light">
+                            <div className="text-white/90 text-sm md:text-xl leading-relaxed font-light text-left">
                                 <p>
-                                    Abhijit Menon was a visionary IT student of SOE, known for his passion for science, technology, and original ideas. He inspired those around him to think unconventionally and approach problems with creativity.
-                                </p>
-                                <p>
-                                    His curiosity knew no bounds, and he was always eager to push the limits of knowledge. Abhijit believed that innovation was not just about finding solutions but about asking the right questions.
-                                </p>
-                                <p>
-                                    His enthusiasm and intellect made a lasting impact on his peers and mentors alike. Though he is no longer with us, his spirit of discovery and relentless pursuit of knowledge will continue to inspire future generations. His brilliance, originality, and love for learning will always be remembered.
+                                    Abhijit Menon was a visionary IT student of SOE, known for his passion for science, technology, and original ideas. He inspired those around him to think creatively and approach problems in unconventional ways. His curiosity and enthusiasm for learning pushed him to constantly explore new ideas and challenge boundaries. Though he is no longer with us, his spirit of innovation and love for knowledge will continue to inspire future generations.
                                 </p>
                             </div>
                         </GlassCard>
