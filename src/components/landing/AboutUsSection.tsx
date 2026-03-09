@@ -44,7 +44,7 @@ export function AboutAndMemorialSection() {
                         transition={{ duration: 1, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
                     >
                         <GlassCard className="p-8 md:p-12 h-full flex flex-col border-white/10 hover:border-sky-400/20 transition-all duration-500 bg-black/40">
-                            <h3 className="text-xl md:text-3xl font-black text-white mb-6 tracking-tighter uppercase">ABOUT EUROPA</h3>
+                            <h3 className="text-xl md:text-3xl font-black text-white mb-6 tracking-tighter uppercase">ABOUT HACK EUROPA</h3>
                             <div className="text-white/80 text-base md:text-lg leading-relaxed font-normal">
                                 <p className="mb-4">
                                     Hack Europa is our flagship annual hackathon providing a platform for students to collaborate and build solutions. It brings together passionate developers to solve real-world problems.
